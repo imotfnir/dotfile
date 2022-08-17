@@ -41,7 +41,7 @@ Plug 'https://github.com/aphroteus/vim-uefi'
 Plug 'https://github.com/lemonade-command/lemonade'
 Plug 'https://github.com/junegunn/rainbow_parentheses.vim'
 Plug 'https://github.com/tpope/vim-fugitive'
-
+Plug 'https://github.com/Xuyuanp/scrollbar.nvim'
 set encoding=UTF-8
 
 call plug#end()
