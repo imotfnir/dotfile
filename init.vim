@@ -15,6 +15,8 @@
 :set smarttab
 :set expandtab
 :set tags=./tags,tags;
+:set ignorecase
+:set smartcase
 @REM :set incsearch
 filetype indent on
 syntax enable
@@ -87,4 +89,6 @@ let g:clipboard = {
 :set cursorline
 :set cursorcolumn
 
-
+" show whitespace
+:set listchars=eol:↓,tab:→·,trail:~,extends:>,precedes:<,space:·
+:set list
