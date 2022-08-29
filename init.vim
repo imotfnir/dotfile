@@ -1,25 +1,27 @@
+lua require('plugins')
+
 :let g:rainbw_active=1
-:set number
-:set relativenumber
-:set autoindent
-:set tabstop=4
-:set shiftwidth=4
-:set formatoptions+=r
-:set hlsearch
-:set viminfo='20,\"1000"
-:set fileencodings=utf-8,big5
-:set history=1000
-:set ruler
-:set mouse=a
-:set softtabstop=4
-:set smarttab
-:set expandtab
-:set tags=./tags,tags;
-:set ignorecase
-:set smartcase
-@REM :set incsearch
-filetype indent on
-syntax enable
+" :set number
+" :set relativenumber
+" :set autoindent
+" :set tabstop=4
+" :set shiftwidth=4
+" :set formatoptions+=r
+" :set hlsearch
+" :set viminfo='20,\"1000"
+" :set fileencodings=utf-8,big5
+" :set history=1000
+" :set ruler
+" :set mouse=a
+" :set softtabstop=4
+" :set smarttab
+" :set expandtab
+" :set tags=./tags,tags;
+" :set ignorecase
+" :set smartcase
+" :set incsearch
+" filetype indent on
+" syntax enable
 
 " :let mapleader = " "
 
@@ -44,6 +46,9 @@ Plug 'https://github.com/lemonade-command/lemonade'
 Plug 'https://github.com/junegunn/rainbow_parentheses.vim'
 Plug 'https://github.com/tpope/vim-fugitive'
 Plug 'https://github.com/Xuyuanp/scrollbar.nvim'
+Plug 'https://github.com/jiangmiao/auto-pairs'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
 set encoding=UTF-8
 
 call plug#end()
@@ -82,9 +87,9 @@ let g:clipboard = {
 
 
 " setting
-:colorscheme molokai
-:let g:rainbow#max_level = 16
-:let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{','}']]
+" :colorscheme molokai
+" :let g:rainbow#max_level = 16
+" :let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{','}']]
 " cursor
 :set cursorline
 :set cursorcolumn
