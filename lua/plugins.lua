@@ -90,7 +90,6 @@ require('nightfox').setup({
 -- setup must be called before loading
 vim.cmd([[colorscheme terafox]])
 
-
 vim.cmd [[packadd packer.nvim]]
 -- All Plugin Config
 return require('packer').startup(function()
@@ -101,6 +100,8 @@ return require('packer').startup(function()
 
   -- You add plugins here  
   use "EdenEast/nightfox.nvim" -- Packer
+  use "nvim-treesitter/nvim-treesitter"
+  use {'romgrk/barbar.nvim', requires = {'kyazdani42/nvim-web-devicons'}}
 end)
 
 
