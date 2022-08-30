@@ -102,6 +102,7 @@ return require('packer').startup(function()
   use "EdenEast/nightfox.nvim" -- Packer
   use "nvim-treesitter/nvim-treesitter"
   use {'romgrk/barbar.nvim', requires = {'kyazdani42/nvim-web-devicons'}}
+  use "terryma/vim-multiple-cursors" -- CTRL·+·N·for·multiple·cursors
 end)
 
 
