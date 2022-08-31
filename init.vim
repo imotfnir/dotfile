@@ -1,4 +1,8 @@
+lua require('init')
 lua require('plugins')
+lua require('keybinds')
+lua require('autocmd')
+lua require('setting')
 
 :let g:rainbw_active=1
 
@@ -6,8 +10,6 @@ lua require('plugins')
 " - For Neovim: stdpath('data') . '/plugged'
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin()
-Plug 'https://github.com/preservim/nerdtree' " NerdTree
-Plug 'https://github.com/tpope/vim-commentary' " For Commenting gcc & gc
 Plug 'https://github.com/vim-airline/vim-airline' " Status bar
 Plug 'https://github.com/ap/vim-css-color' " CSS Color Preview
 Plug 'https://github.com/rafi/awesome-vim-colorschemes' " Retro Scheme
@@ -28,7 +30,12 @@ set encoding=UTF-8
 
 call plug#end()
 
-
+" vscode support
+if exists('g:vscode')
+    " VSCode extension
+else
+    " ordinary neovim
+endif
 
 " keymap
 nnoremap <F2> :Neotree<CR>

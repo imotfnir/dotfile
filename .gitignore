@@ -1,2 +1,5 @@
 plugged/*
 plugin/*
+node_modules/*
+yarn.lock
+.netrwhist
