@@ -1,4 +1,5 @@
-require('other_plugins')
+-- Import Plugin Config
+require('other_plugins.init')
 
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
 vim.cmd([[
@@ -14,7 +15,7 @@ if not status_ok then
   return
 end
 
--- Customized setting
+-- My customized setting
 vim.cmd([[
 set number
 set relativenumber
@@ -42,7 +43,7 @@ syntax enable
 
 ]])
 
--- Keymapping
+-- My Keymapping
 vim.cmd([[
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
@@ -52,57 +53,40 @@ vnoremap <A-j> :m '>+1<CR>gv=gv
 vnoremap <A-k> :m '<-2<CR>gv=gv
 ]])
 
-
 -- Color schemes setting
-require('nightfox').setup({
-  options = {
-    -- Compiled file's destination location
-    compile_path = vim.fn.stdpath("cache") .. "/nightfox",
-    compile_file_suffix = "_compiled", -- Compiled file suffix
-    transparent = false,    -- Disable setting background
-    terminal_colors = true, -- Set terminal colors (vim.g.terminal_color_*) used in `:terminal`
-    dim_inactive = false,   -- Non focused panes set to alternative background
-    styles = {              -- Style to be applied to different syntax groups
-      comments = "italic",    -- Value is any valid attr-list value `:help attr-list`
-      conditionals = "NONE",
-      constants = "NONE",
-      functions = "NONE",
-      keywords = "bold",
-      numbers = "NONE",
-      operators = "NONE",
-      strings = "NONE",
-      types = "italic,bold",
-      variables = "NONE",
-    },
-    inverse = {             -- Inverse highlight for different types
-      match_paren = false,
-      visual = false,
-      search = false,
-    },
-    modules = {             -- List of various plugins and additional options
-      -- ...
-    },
-  },
-  palettes = {},
-  specs = {},
-  groups = {},
-})
--- setup must be called before loading
-vim.cmd([[colorscheme terafox]])
+require('other_plugins.nightfox')
 
+-- My text color
+vim.cmd([[
+highlight Whitespace ctermfg=NONE guifg=#49ffe7
+highlight Nontext ctermfg=NONE guifg=#49ffe7
+]])
+
+
+-- Import Plugin
+vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 vim.cmd [[packadd packer.nvim]]
--- All Plugin Config
 return require('packer').startup(function()
   -- Packer can manage itself
   use 'wbthomason/packer.nvim' -- Have packer manage itself
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
 
-  -- You add plugins here  
+  -- You add plugins here
   use "EdenEast/nightfox.nvim" -- Packer
   use "nvim-treesitter/nvim-treesitter"
   use {'romgrk/barbar.nvim', requires = {'kyazdani42/nvim-web-devicons'}}
   use "terryma/vim-multiple-cursors" -- CTRL·+·N·for·multiple·cursors
+  use "ntpeters/vim-better-whitespace" -- Whitespace characters highlighted
+  use {
+    "nvim-neo-tree/neo-tree.nvim",
+      branch = "v2.x",
+      requires = { 
+        "nvim-lua/plenary.nvim",
+        "kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
+        "MunifTanjim/nui.nvim",
+      }
+    } -- Browse the file system
 end)
 
 

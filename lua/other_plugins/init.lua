@@ -1,4 +1,5 @@
 require("other_plugins.barbar")
+--require("other_plugins.neo-tree")
 
 require("nvim-treesitter.configs").setup {
   highlight = {

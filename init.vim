@@ -15,8 +15,7 @@ Plug 'https://github.com/neoclide/coc.nvim'  " Auto Completion
 Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons
 Plug 'https://github.com/tc50cal/vim-terminal' " Vim Terminal
 Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation
-Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple cursors
-Plug 'https://github.com/junegunn/goyo.vim' "goyo centering the code 
+Plug 'https://github.com/junegunn/goyo.vim' "goyo centering the code
 Plug 'https://github.com/justmao945/vim-clang'
 Plug 'https://github.com/aphroteus/vim-uefi'
 Plug 'https://github.com/lemonade-command/lemonade'
@@ -32,34 +31,14 @@ call plug#end()
 
 
 " keymap
-nnoremap <F2> :NERDTreeToggle<CR>
+nnoremap <F2> :Neotree<CR>
 nnoremap <F3> :TagbarToggle<CR>
-nnoremap <F4> :TerminalSplit zsh<CR> 
-
-nnoremap <C-Left> :tabprevious<CR>
-nnoremap <C-Right> :tabnext<CR>
+nnoremap <F4> :TerminalSplit zsh<CR>
 
 " cscope
 :if !empty(glob("cscope.out"))
 :   cscope add cscope.out
 :endif
-
-
-" bash support
-let g:LanguageClient_serverCommands = {'sh': ['bash-language-server', 'start']}
-let g:python3_host_prog = '/home/baopang/anaconda3/bin/python'
-let g:clipboard = {
-      \   'name': 'myClipboard',
-      \   'copy': {
-      \      '+': {lines, regtype -> extend(g:, {'foo': [lines, regtype]}) },
-      \      '*': {lines, regtype -> extend(g:, {'foo': [lines, regtype]}) },
-      \    },
-      \   'paste': {
-      \      '+': {-> get(g:, 'foo', [])},
-      \      '*': {-> get(g:, 'foo', [])},
-      \   },
-      \ }
-
 
 
 " setting
