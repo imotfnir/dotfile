@@ -12,11 +12,6 @@ if not status_ok then
   return
 end
 
--- Plugins config
---require("other_plugins.neo-tree")
-
-
-
 
 -- Import Plugin
 vim.g.neo_tree_remove_legacy_commands = 1

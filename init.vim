@@ -1,10 +1,8 @@
 lua require('init')
 lua require('plugins')
-lua require('keybinds')
 lua require('autocmd')
 lua require('setting')
-
-:let g:rainbw_active=1
+lua require('keybinds')
 
 " Specify a directory for plugins
 " - For Neovim: stdpath('data') . '/plugged'
@@ -26,8 +24,6 @@ Plug 'https://github.com/tpope/vim-fugitive'
 Plug 'https://github.com/Xuyuanp/scrollbar.nvim'
 Plug 'https://github.com/jiangmiao/auto-pairs'
 
-set encoding=UTF-8
-
 call plug#end()
 
 " vscode support
@@ -37,22 +33,9 @@ else
     " ordinary neovim
 endif
 
-" keymap
-nnoremap <F2> :Neotree<CR>
-nnoremap <F3> :TagbarToggle<CR>
-nnoremap <F4> :TerminalSplit zsh<CR>
-
 " cscope
 :if !empty(glob("cscope.out"))
 :   cscope add cscope.out
 :endif
 
 
-" setting
-" cursor
-:set cursorline
-:set cursorcolumn
-
-" show whitespace
-:set listchars=eol:↓,tab:→·,trail:~,extends:>,precedes:<,space:·
-:set list

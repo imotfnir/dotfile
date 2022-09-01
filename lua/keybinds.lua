@@ -33,6 +33,13 @@ map('i', '<C-E>', '<ESC>A')
 map('i', '<C-A>', '<ESC>I')
 
 -- Copying the vscode behaviour of making tab splits
-map('n', '<C-\\>', '<CMD>vsplit<CR>')
-map('n', '<A-\\>', '<CMD>split<CR>')
+map('n', '<C-w>-', '<CMD>vsplit<CR>')
+map('n', '<C-w>_', '<CMD>split<CR>')
+map('n', '<C-w>x', '<C-w>c')
 
+-- Plugin keybinds
+map('n', '<F2>', '<CMD>Neotree toggle<CR>')
+map('n', '<F3>', '<CMD>TagbarToggle<CR>')
+
+-- ctags
+map('n', '<C-[>', '<C-t>')

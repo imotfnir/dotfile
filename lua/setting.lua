@@ -21,7 +21,7 @@ o.ignorecase = true
 o.smartcase = true
 o.incsearch = true
 o.hlsearch = true
-o.tags = "./tags,tags;"
+o.tags = "./tags,tags,./.tags,.tags;"
 
 -- Undo and backup options
 o.backup = false
@@ -33,14 +33,11 @@ o.swapfile = false
 o.fileencodings = "utf-8,big5"
 o.history = 1000
 o.mouse = a
+o.listchars = "eol:↓,tab:→·,trail:~,extends:>,precedes:<,space:·"
+o.list = true
 
 vim.cmd([[
 filetype indent on
 syntax enable
 ]])
 
--- Override text color
-vim.cmd([[
-highlight Whitespace ctermfg=NONE guifg=#49ffe7
-highlight Nontext ctermfg=NONE guifg=#49ffe7
-]])

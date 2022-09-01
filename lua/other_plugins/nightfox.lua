@@ -34,3 +34,8 @@ require('nightfox').setup({
 })
 -- setup must be called before loading
 vim.cmd([[colorscheme terafox]])
+-- Override nontext color
+vim.cmd([[
+highlight Whitespace ctermfg=NONE guifg=#49ffe7
+highlight Nontext ctermfg=NONE guifg=#49ffe7
+]])
