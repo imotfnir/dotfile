@@ -1,0 +1,5 @@
+neovim/.config/nvim/plugged
+neovim/.config/nvim/plugin
+neovim/.config/nvim/node_modules/*
+neovim/.config/nvim/yarn.lock
+neovim/.config/nvim/.netrwhist
