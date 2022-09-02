@@ -74,6 +74,7 @@ return require('packer').startup(function()
         require('Comment').setup()
     end,
   }
+  use 'ggandor/lightspeed.nvim'
 end)
 
 
