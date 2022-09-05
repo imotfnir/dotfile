@@ -31,8 +31,8 @@ o.swapfile = false
 
 -- other setting
 o.fileencodings = "utf-8,big5"
+o.mouse = 'a'
 o.history = 1000
-o.mouse = a
 o.listchars = "eol:↓,tab:→·,trail:~,extends:>,precedes:<,space:·"
 o.list = true
 
