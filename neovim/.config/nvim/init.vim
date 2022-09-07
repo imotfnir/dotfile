@@ -26,6 +26,9 @@ Plug 'https://github.com/jiangmiao/auto-pairs'
 
 call plug#end()
 
+
+runtime ./vim_script/coc.vim
+
 " vscode support
 if exists('g:vscode')
     " VSCode extension

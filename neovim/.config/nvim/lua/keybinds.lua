@@ -21,8 +21,8 @@ map('v', '<A-k>', ":move '<-2<CR>gv")
 map('n', '<C-Q>', '<CMD>q<CR>')
 
 -- Save file
-map('n', '<C-s>', '<CMD>w<CR>')
-map('i', '<C-s>', '<Esc><CMD>w<CR>')
+-- map('n', '<C-s>', '<CMD>w<CR>')
+-- map('i', '<C-s>', '<Esc><CMD>w<CR>')
 
 -- leader-o/O inserts blank line below/above
 map('n', 'o', 'o<ESC>')
