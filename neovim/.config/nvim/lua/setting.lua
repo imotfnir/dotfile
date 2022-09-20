@@ -35,6 +35,9 @@ o.mouse = 'a'
 o.history = 1000
 o.listchars = "eol:↓,tab:→·,trail:~,extends:>,precedes:<,space:·"
 o.list = true
+o.spelllang = 'en'
+o.spell = true
+
 
 vim.cmd([[
 filetype indent on
