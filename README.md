@@ -1,30 +1,16 @@
 # Install
-
-Set soft link to nvim and tmux
-```
-git clone https://github.com/imotfnir/dotfile ~/.dotfile
-mkdir -p ~/.config 
-ln -s ~/.dotfile/neovim ~/.config/nvim
-ln -s ~/.dotfile/tmux/.tmux/.* ~
+```bash
+git clone --depth=1 https://github.com/imotfnir/dotfile ~/.my-dotfile
+sh ~/.my-dotfile/install.sh install
 ```
 
-Install lua packer.nvim
 
-```
-git clone --depth 1 https://github.com/wbthomason/packer.nvim\
- ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-```
-
-Install legacy nvim plugin manager
-
-```
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+# Good apps config finish by other contributors
+- https://github.com/amix/vimrc
+```bash
+git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime
+sh ~/.vim_runtime/install_basic_vimrc.sh
+python update_plugins.py
 ```
 
-Init plugin manager
 
-```
-nvim
-:PackerSync
-:PlugInstall
-```
