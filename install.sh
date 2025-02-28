@@ -11,18 +11,28 @@ CONFIG_MAP=(
     ["$SOURCE_DIR/tmux.conf"]="$HOME/.config/tmux/tmux.conf"
     ["$SOURCE_DIR/tmux.conf.local"]="$HOME/.config/tmux/tmux.conf.local"
     ["$SOURCE_DIR/vimrc"]="$HOME/.vimrc"
-    # ["$SOURCE_DIR/git/gitconfig"]="$HOME/.gitconfig"       # No sudo needed
+    ["$SOURCE_DIR/gitconfig"]="$HOME/.my-git.conf"
     # ["$SOURCE_DIR/some_system_conf"]="/etc/some_conf"      # Example requiring sudo
 )
+
+# Check is zsh install
+is_zsh_install() {
+    if [ "${ZSH_CUSTOM+x}" ]; then
+        CONFIG_MAP["$SOURCE_DIR/aliases.zsh"]="$ZSH_CUSTOM/aliases.zsh"
+        CONFIG_MAP["$SOURCE_DIR/env.zsh"]="$ZSH_CUSTOM/env.zsh"
+    else
+        echo "ZSH_CUSTOM is not defined, zsh maybe not installed"
+    fi
+}
 
 # Check if sudo is needed for a target path
 needs_sudo() {
     local target="$1"
     # Assume sudo is needed if the target path is not under $HOME
     if [[ "$target" != "$HOME"* ]]; then
-        return 0  # Needs sudo
+        return 0 # Needs sudo
     fi
-    return 1  # No sudo needed
+    return 1 # No sudo needed
 }
 
 # Ensure the target directory exists, creating it if necessary
@@ -105,16 +115,16 @@ uninstall_config() {
 
 # Main logic: handle install or uninstall commands
 case "$1" in
-    "install")
-        install_config
-        echo "Installation completed!"
-        ;;
-    "uninstall")
-        uninstall_config
-        echo "Uninstallation completed!"
-        ;;
-    *)
-        echo "Usage: $0 {install|uninstall}"
-        exit 1
-        ;;
+"install")
+    install_config
+    echo "Installation completed!"
+    ;;
+"uninstall")
+    uninstall_config
+    echo "Uninstallation completed!"
+    ;;
+*)
+    echo "Usage: $0 {install|uninstall}"
+    exit 1
+    ;;
 esac
