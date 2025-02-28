@@ -8,8 +8,8 @@ echo "SOURCE_DIR is: $SOURCE_DIR"
 declare -A CONFIG_MAP
 CONFIG_MAP=(
     ["$SOURCE_DIR/i3"]="$HOME/.config/i3/config"
-    ["$SOURCE_DIR/tmux.conf"]="$HOME/.tmux.conf"
-    ["$SOURCE_DIR/tmux.conf.local"]="$HOME/.tmux.conf.local"
+    ["$SOURCE_DIR/tmux.conf"]="$HOME/.config/tmux/tmux.conf"
+    ["$SOURCE_DIR/tmux.conf.local"]="$HOME/.config/tmux/tmux.conf.local"
     ["$SOURCE_DIR/vimrc"]="$HOME/.vimrc"
     # ["$SOURCE_DIR/git/gitconfig"]="$HOME/.gitconfig"       # No sudo needed
     # ["$SOURCE_DIR/some_system_conf"]="/etc/some_conf"      # Example requiring sudo
