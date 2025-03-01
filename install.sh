@@ -15,8 +15,9 @@ CONFIG_MAP=(
 )
 
 # Check is zsh install
-is_zsh_install() {
-    if [ "${ZSH_CUSTOM+x}" ]; then
+zsh_config() {
+    if [ "${ZSH+x}" ]; then
+        ZSH_CUSTOM="$ZSH/custom"
         CONFIG_MAP["$SOURCE_DIR/aliases.zsh"]="$ZSH_CUSTOM/aliases.zsh"
         CONFIG_MAP["$SOURCE_DIR/env.zsh"]="$ZSH_CUSTOM/env.zsh"
     else
@@ -113,6 +114,7 @@ uninstall_config() {
 }
 
 # Main logic: handle install or uninstall commands
+zsh_config
 case "$1" in
 "install")
     install_config
