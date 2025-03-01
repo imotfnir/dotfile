@@ -1,0 +1,183 @@
+{
+  "devices": [
+    [
+      32982,
+      {
+        "*": {
+          "config": {
+            "acceleration": false,
+            "accelerationRate": 0,
+            "commands": [
+              [
+                1,
+                {
+                  "command": "mouse_leftClick",
+                  "params": null
+                }
+              ],
+              [
+                2,
+                {
+                  "command": "mouse_middleClick",
+                  "params": {
+                    "label": "",
+                    "modifiers": ""
+                  }
+                }
+              ],
+              [
+                3,
+                {
+                  "command": "keyboard_shortcut",
+                  "params": {
+                    "keyCode": 125,
+                    "label": "",
+                    "modifiers": ""
+                  }
+                }
+              ],
+              [
+                4,
+                {
+                  "command": "navigation_scrollwTrackball",
+                  "params": {
+                    "lines": "2"
+                  }
+                }
+              ],
+              [
+                5,
+                {
+                  "command": "keyboard_shortcut",
+                  "params": {
+                    "keyCode": 124,
+                    "label": "",
+                    "modifiers": ""
+                  }
+                }
+              ],
+              [
+                8,
+                {
+                  "command": "mouse_rightClick",
+                  "params": {
+                    "label": "",
+                    "modifiers": ""
+                  }
+                }
+              ],
+              [
+                10,
+                {
+                  "command": "keyboard_shortcut",
+                  "params": {
+                    "keyCode": 44,
+                    "label": "",
+                    "modifiers": "ctrl"
+                  }
+                }
+              ],
+              [
+                12,
+                {
+                  "command": "keyboard_shortcut",
+                  "params": {
+                    "keyCode": 126,
+                    "label": "",
+                    "modifiers": ""
+                  }
+                }
+              ],
+              [
+                16,
+                {
+                  "command": "mouse_button5Click",
+                  "params": null
+                }
+              ],
+              [
+                1073741824,
+                {
+                  "command": "navigation_scrollRight",
+                  "params": null
+                }
+              ],
+              [
+                2147483648,
+                {
+                  "command": "navigation_scrollLeft",
+                  "params": null
+                }
+              ]
+            ],
+            "customModifiers": "ctrl",
+            "customacceleration": false,
+            "customaccelerationRate": 0,
+            "customspeed": 20,
+            "id": 0,
+            "inertialScroll": true,
+            "inertialScrollFactor": 0,
+            "inertialScrollNullSteps": 0,
+            "inertialScrollTimer": 0,
+            "lockedAxisModifiers": "alt",
+            "scrollInvert": false,
+            "scrollLines": 4,
+            "slowDivider": 0,
+            "slowModifiers": "",
+            "snapModifiers": "",
+            "snippets": [
+              {
+                "content": "",
+                "label": ""
+              },
+              {
+                "content": "",
+                "label": ""
+              },
+              {
+                "content": "",
+                "label": ""
+              },
+              {
+                "content": "",
+                "label": ""
+              },
+              {
+                "content": "",
+                "label": ""
+              },
+              {
+                "content": "",
+                "label": ""
+              },
+              {
+                "content": "",
+                "label": ""
+              },
+              {
+                "content": "",
+                "label": ""
+              },
+              {
+                "content": "",
+                "label": ""
+              },
+              {
+                "content": "",
+                "label": ""
+              }
+            ],
+            "speed": 50
+          },
+          "fileName": "",
+          "name": "*"
+        }
+      }
+    ]
+  ],
+  "platform": "windows",
+  "timestamp": 1732209920,
+  "trayIcon": true,
+  "versionMajor": 2,
+  "versionMinor": 0
+}
