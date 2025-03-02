@@ -1,2 +1,5 @@
 alias ls="eza -gb --git"
 alias rm="trash"
+alias gitl="lazygit"
+alias lg="lazygit"
+alias dockerl="lazydocker"
