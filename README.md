@@ -13,4 +13,9 @@ sh ~/.vim_runtime/install_basic_vimrc.sh
 python update_plugins.py
 ```
 
-
+# TUI tools
+```bash
+apt install golang-go
+go install github.com/jesseduffield/lazydocker@latest
+go install github.com/jesseduffield/lazygit@latest
+```
