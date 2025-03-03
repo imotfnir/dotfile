@@ -2,6 +2,7 @@
 ```bash
 git clone --depth=1 https://github.com/imotfnir/dotfile ~/.my-dotfile
 sh ~/.my-dotfile/install.sh install
+git config --global include.path ~/.my-git.conf
 ```
 
 
