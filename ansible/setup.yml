@@ -1,0 +1,22 @@
+- name: Install tools
+  hosts: orangepi_armbian
+  become: yes
+  vars_files:
+    - vars.yml
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
+    - name: Install basic tools
+      apt:
+        name:
+          - git
+          - vim
+          - htop
+          - tmux
+          - ranger
+          - docker.io
+          - golang-go
+          - eza
+        state: present

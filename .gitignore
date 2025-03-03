@@ -3,3 +3,4 @@ neovim/plugin
 neovim/node_modules/*
 neovim/yarn.lock
 neovim/.netrwhist
+*.log
