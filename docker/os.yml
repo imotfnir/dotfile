@@ -1,0 +1,47 @@
+services:
+  macos:
+    image: dockurr/macos
+    container_name: macos
+    environment:
+      VERSION: "13"
+      DISK_SIZE: "40G"
+      RAM_SIZE: "2G"
+      CPU_CORES: "2"
+    devices:
+      - /dev/kvm
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - 8008:8006
+      - 4022:22
+      - 5900:5900/tcp
+      - 5900:5900/udp
+    stop_grace_period: 2m
+  windows_11:
+    image: dockurr/windows
+    container_name: windows_11
+    environment:
+      VERSION: "11"
+    devices:
+      - /dev/kvm
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - 8006:8006
+      - 3389:3389/tcp
+      - 3389:3389/udp
+    stop_grace_period: 2m
+  windows_xp:
+    image: dockurr/windows
+    container_name: windows_xp
+    environment:
+      VERSION: "xp"
+    devices:
+      - /dev/kvm
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - 8007:8006
+      - 3390:3389/tcp
+      - 3390:3389/udp
+    stop_grace_period: 2m

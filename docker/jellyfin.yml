@@ -1,0 +1,21 @@
+services:
+  jellyfin:
+    image: lscr.io/linuxserver/jellyfin:latest
+    container_name: jellyfin
+    environment:
+      - PUID=1000
+      - PGID=1001
+      - UMASK=002
+      - TZ=TW
+    volumes:
+      - /var/lib/jellyfin:/config
+      - /home/imotfnir/rigel:/data/
+    devices:  
+      - /dev/dri:/dev/dri
+    ports:
+      - 8096:8096 # http
+      - 8920:8920 # optional https
+      - 7359:7359/udp #optional
+      - 1900:1900/udp #optional
+    restart: unless-stopped
+

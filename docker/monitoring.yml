@@ -1,0 +1,30 @@
+services:
+  dashy:
+    image: lissy93/dashy
+    container_name: dashy
+    restart: always
+    volumes:
+      - ${DATA_DIR}/dashy:/app/user-data
+    ports:
+      - 17054:8080
+    environment:
+      - NODE_ENV=production
+  beszel:
+    image: "henrygd/beszel"
+    container_name: "beszel"
+    restart: unless-stopped
+    ports:
+      - "8090:8090"
+    volumes:
+      - ${DATA_DIR}/beszel_data:/beszel_data
+  portainer:
+    image: portainer/portainer-ce
+    container_name: portainer
+    restart: always
+    command: -H unix:///var/run/docker.sock
+    ports:
+      - 9000:9000
+      - 9443:9443
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ${DATA_DIR}/portainer:/data

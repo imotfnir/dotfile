@@ -1,0 +1,35 @@
+services:
+  calibre:
+    image: lscr.io/linuxserver/calibre:latest
+    container_name: calibre
+    security_opt:
+      - seccomp:unconfined #optional
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=TW
+      - PASSWORD= #optional
+      - CLI_ARGS= #optional
+    volumes:
+      - /var/lib/calibre/config:/config
+      - "/home/imotfnir/Calibre Library:/config/Calibre Library"
+    ports:
+      - 8082:8080
+      - 8181:8181
+      - 8081:8081
+    restart: unless-stopped
+  calibre-web:
+    image: lscr.io/linuxserver/calibre-web:latest
+    container_name: calibre-web
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+      - DOCKER_MODS=linuxserver/mods:universal-calibre #optional
+      - OAUTHLIB_RELAX_TOKEN_SCOPE=1 #optional
+    volumes:
+      - "/home/imotfnir/Calibre Library:/config"
+      - /home/imotfnir/Rsync/WorkDocument/Books/Ebooks:/books
+    ports:
+      - 8083:8083
+    restart: unless-stopped
