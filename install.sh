@@ -20,6 +20,7 @@ zsh_config() {
         ZSH_CUSTOM="$ZSH/custom"
         CONFIG_MAP["$SOURCE_DIR/aliases.zsh"]="$ZSH_CUSTOM/aliases.zsh"
         CONFIG_MAP["$SOURCE_DIR/env.zsh"]="$ZSH_CUSTOM/env.zsh"
+        CONFIG_MAP["$SOURCE_DIR/plugins.zsh"]="$ZSH/plugins.zsh"
     else
         echo "ZSH_CUSTOM is not defined, zsh maybe not installed"
     fi
