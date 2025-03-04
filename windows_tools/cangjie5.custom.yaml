@@ -1,0 +1,41 @@
+engine:
+  filters:
+    - simplifier
+    - uniquifier
+  segmentors:
+    - abc_segmentor
+    - fallback_segmentor
+  translators:
+    - echo_translator
+    - table_translator
+speller:
+  alphabet: "abcdefghijklmnopqrstuvwxyz"
+  auto_select: true
+  delimiter: " "
+patch:
+  translator/enable_sentence: false
+  translator/dictionary: cangjie5.cj3ext
+  abc_segmentor/extra_tags: {}
+  switches:
+    - name: ascii_mode
+      reset: 0
+      states: ["中文", "西文"]
+    - name: full_shape
+      states: ["半角", "全角"]
+    - name: simplification
+      states: ["漢字", "汉字"]
+    - name: extended_charset
+      states: ["常用", "增廣"]
+    - name: ascii_punct
+      states: ["。，", "．，"]
+    - name: completion_toggle
+      states: ["無", "建議"] # 狀態名稱，顯示在選單中
+  key_binder/bindings/+:
+    - { accept: "Control+Shift+8", toggle: completion_toggle, when: always }
+    - {
+        accept: "Control+Shift+asterisk",
+        toggle: completion_toggle,
+        when: always,
+      }
+  translator/enable_completion: "`completion_toggle`"
+  translator/enable_user_dict: true
