@@ -1,0 +1,7 @@
+- name: Install lazydocker
+  ansible.builtin.command:
+    cmd: go install github.com/jesseduffield/lazydocker@latest
+
+- name: Install lazygit
+  ansible.builtin.command:
+    cmd: go install github.com/jesseduffield/lazygit@latest

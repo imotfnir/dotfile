@@ -1,22 +1,55 @@
 - name: Install tools
   hosts: orangepi_armbian
-  become: yes
   vars_files:
     - vars.yml
   tasks:
-    - name: Update apt cache
-      apt:
-        update_cache: yes
+    # - name: Update apt cache
+    #   apt:
+    #     update_cache: yes
+    #   become: yes
+    #   ignore_errors: yes
 
-    - name: Install basic tools
-      apt:
-        name:
-          - git
-          - vim
-          - htop
-          - tmux
-          - ranger
-          - docker.io
-          - golang-go
-          - eza
+    # - name: Install git
+    #   ansible.builtin.package:
+    #     name: git
+    #     state: present
+    #   become: yes
+    #   register: git_install_result
+    #   ignore_errors: yes
+
+    - name: Install go
+      ansible.builtin.package:
+        name: golang
         state: present
+      become: yes
+      register: go_install_result
+      ignore_errors: yes
+
+    # - name: Install basic tools
+    #   ansible.builtin.package:
+    #     name:
+    #       - eza
+    #       - tmux
+    #       - vim
+    #       - htop
+    #       - btop
+    #       - ranger
+    #       - trash-cli
+    #       - docker.io
+    #     state: present
+    #   become: yes
+    #   ignore_errors: yes
+
+    - name: Install Miniconda
+      ansible.builtin.import_tasks: tasks/conda.yml
+      become: no
+      ignore_errors: yes
+
+    - name: debug
+      ansible.builtin.debug:
+        var: go_install_result
+
+    - name: Install lazydocker
+      ansible.builtin.import_tasks: tasks/go_tools.yml
+      become: no
+      when: not go_install_result.failed
