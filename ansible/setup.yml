@@ -3,19 +3,19 @@
   vars_files:
     - vars.yml
   tasks:
-    # - name: Update apt cache
-    #   apt:
-    #     update_cache: yes
-    #   become: yes
-    #   ignore_errors: yes
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+      become: yes
+      ignore_errors: yes
 
-    # - name: Install git
-    #   ansible.builtin.package:
-    #     name: git
-    #     state: present
-    #   become: yes
-    #   register: git_install_result
-    #   ignore_errors: yes
+    - name: Install git
+      ansible.builtin.package:
+        name: git
+        state: present
+      become: yes
+      register: git_install_result
+      ignore_errors: yes
 
     - name: Install go
       ansible.builtin.package:
@@ -25,20 +25,30 @@
       register: go_install_result
       ignore_errors: yes
 
-    # - name: Install basic tools
-    #   ansible.builtin.package:
-    #     name:
-    #       - eza
-    #       - tmux
-    #       - vim
-    #       - htop
-    #       - btop
-    #       - ranger
-    #       - trash-cli
-    #       - docker.io
-    #     state: present
-    #   become: yes
-    #   ignore_errors: yes
+    - name: Install snap
+      ansible.builtin.package:
+        name:
+          - snap
+          - snapd
+        state: present
+      become: yes
+      register: snap_install_result
+      ignore_errors: yes
+
+    - name: Install basic tools
+      ansible.builtin.package:
+        name:
+          - eza
+          - tmux
+          - vim
+          - htop
+          - btop
+          - ranger
+          - trash-cli
+          - docker.io
+        state: present
+      become: yes
+      ignore_errors: yes
 
     - name: Install Miniconda
       ansible.builtin.import_tasks: tasks/conda.yml
