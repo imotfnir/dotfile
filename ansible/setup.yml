@@ -1,4 +1,4 @@
-- name: Install tools
+- name: System setup
   hosts: orangepi_armbian
   vars_files:
     - vars.yml
@@ -54,10 +54,6 @@
       ansible.builtin.import_tasks: tasks/conda.yml
       become: no
       ignore_errors: yes
-
-    - name: debug
-      ansible.builtin.debug:
-        var: go_install_result
 
     - name: Install lazydocker
       ansible.builtin.import_tasks: tasks/go_tools.yml
