@@ -1,0 +1,27 @@
+# Please enter the commit message following this template:
+# <type>(<scope>): <short description>
+#
+# Type options:
+#   feat: A new feature
+#   fix: A bug fix
+#   docs: Documentation changes
+#   refactor: Code refactoring without functional change
+#   test: Adding or modifying tests
+#   chore: Routine tasks, no production code change
+#   ci: CI/CD configuration changes
+#   build: Build system changes
+#   perf: Performance improvements
+#   style: Code style changes (formatting, etc.)
+#
+# Scope: Optional, e.g., api, ui, docs
+# Short description: Concise summary (50 chars or less)
+#
+# Example:
+# feat(api): add user login endpoint
+#
+# Detailed description (optional, after a blank line):
+# - <detail 1>
+# - <detail 2>
+#
+<type>(<scope>): <description>
+
