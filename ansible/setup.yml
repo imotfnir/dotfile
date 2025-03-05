@@ -1,5 +1,5 @@
 - name: System setup
-  hosts: orangepi_armbian
+  hosts: orangepi
   vars_files:
     - vars.yml
   tasks:

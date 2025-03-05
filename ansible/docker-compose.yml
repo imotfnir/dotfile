@@ -1,0 +1,18 @@
+---
+services:
+  ansible-test:
+    image: ubuntu:latest
+    container_name: ansible-test
+    stdin_open: true
+    tty: true
+    networks:
+      my_network:
+        ipv4_address: 172.20.0.2
+networks:
+  my_network:
+    name: ansible_default
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/24
+          gateway: 172.20.0.1
