@@ -45,8 +45,9 @@
           - btop
           - ranger
           - trash-cli
-          - docker.io
           - wireguard
+          - ripgrep
+          - tmuxinator
         state: present
       become: yes
       ignore_errors: yes
