@@ -7,7 +7,7 @@ server:
       ansible_ssh_private_key_file: ~/.ssh/orangepi2
       ansible_become_pass: "{{ vault_ansible_become_pass }}"
 
-ansible-test:
+test:
   hosts:
-    test:
-      ansible_host: 172.20.0.2
+    ansible-test:
+      ansible_connection: docker
