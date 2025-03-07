@@ -1,0 +1,7 @@
+- name: Install tldr
+  ansible.builtin.command:
+    cmd: pip install tldr
+
+- name: Install pylint
+  ansible.builtin.command:
+    cmd: pip install pylint
