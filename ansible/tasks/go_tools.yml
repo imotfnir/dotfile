@@ -5,3 +5,7 @@
 - name: Install lazygit
   ansible.builtin.command:
     cmd: go install github.com/jesseduffield/lazygit@latest
+
+- name: Install wireguard-ui
+  ansible.builtin.command:
+    cmd: go install github.com/ngoduykhanh/wireguard-ui@latest

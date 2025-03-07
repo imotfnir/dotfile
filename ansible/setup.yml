@@ -67,7 +67,7 @@
       register: python_install_result
       when: conda_install_result.failed
 
-    - name: Install lazydocker
+    - name: Install go-tools
       ansible.builtin.import_tasks: tasks/go_tools.yml
       become: no
       when: not go_install_result.failed
