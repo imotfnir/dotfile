@@ -1,0 +1,7 @@
+- name: Install systemctl-tui
+  ansible.builtin.command:
+    cmd: cargo install systemctl-tui --locked
+
+- name: Install trippy
+  ansible.builtin.command:
+    cmd: cargo install trippy --locked

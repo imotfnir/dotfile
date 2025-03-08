@@ -57,6 +57,7 @@
           - wireguard
           - ripgrep
           - tmuxinator
+          - iftop
         state: present
       become: yes
       ignore_errors: yes
@@ -81,3 +82,8 @@
       ansible.builtin.import_tasks: tasks/go_tools.yml
       become: no
       when: not go_install_result.failed
+
+    - name: Install rust-tools
+      ansible.builtin.import_tasks: tasks/rust_tools.yml
+      become: no
+      when: not rust_install_result.failed
