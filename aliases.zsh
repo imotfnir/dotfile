@@ -1,4 +1,4 @@
-alias ls="eza -gb --git"
+alias ls="eza -gb --git --git-repos --color=always"
 alias rm="trash"
 alias gitl="lazygit"
 alias lg="lazygit"
