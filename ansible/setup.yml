@@ -35,6 +35,15 @@
       register: snap_install_result
       ignore_errors: yes
 
+      - name: Install rust
+      ansible.builtin.package:
+        name:
+          - cargo
+        state: present
+      become: yes
+      register: rust_install_result
+      ignore_errors: yes
+
     - name: Install basic tools
       ansible.builtin.package:
         name:
