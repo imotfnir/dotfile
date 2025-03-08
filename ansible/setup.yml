@@ -35,7 +35,7 @@
       register: snap_install_result
       ignore_errors: yes
 
-      - name: Install rust
+    - name: Install rust
       ansible.builtin.package:
         name:
           - cargo
