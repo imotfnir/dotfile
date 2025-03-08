@@ -11,6 +11,7 @@ CONFIG_MAP=(
     ["$SOURCE_DIR/tmux.conf"]="$HOME/.config/tmux/tmux.conf"
     ["$SOURCE_DIR/tmux.conf.local"]="$HOME/.config/tmux/tmux.conf.local"
     ["$SOURCE_DIR/gitconfig"]="$HOME/.my-git.conf"
+    ["$SOURCE_DIR/ranger"]="$HOME/.config/"
     # ["$SOURCE_DIR/some_system_conf"]="/etc/some_conf"      # Example requiring sudo
 )
 
