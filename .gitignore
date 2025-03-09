@@ -1,6 +1,2 @@
-neovim/plugged
-neovim/plugin
-neovim/node_modules/*
-neovim/yarn.lock
-neovim/.netrwhist
 *.log
+nvim/*.json
