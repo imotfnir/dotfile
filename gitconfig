@@ -28,3 +28,5 @@
 [diff "bin"]
         textconv = xxd
         cachetextconv = true
+[core]
+        symlinks = true
