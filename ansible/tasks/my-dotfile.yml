@@ -1,0 +1,8 @@
+- name: git clone my-dotfile
+  ansible.builtin.git:
+    repo: git@github.com:imotfnir/dotfile.git
+    dest: ~/.my-dotfile
+
+- name: Install my-dotfile
+  ansible.builtin.command:
+    cmd: ~/.my-dotfile/install.sh install
