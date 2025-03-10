@@ -5,6 +5,8 @@ plugins=(
     last-working-dir
     solarized-man
     zsh-syntax-highlighting
+    colored-man-pages
+    colorize
     autojump
     copyfile
     copypath
@@ -14,5 +16,7 @@ plugins=(
     docker
     docker-compose
     conda
+    kubectl
+    systemd
 )
 precmd () { echo -n "\x1b]1337;CurrentDir=$(pwd)\x07" }
