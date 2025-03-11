@@ -1,4 +1,4 @@
-vim.o.timeoutlen = 1000
+vim.o.timeoutlen = 2000
 
 local bind = vim.keymap.set
 local opts = { noremap = true, silent = false }
@@ -27,3 +27,12 @@ bind('n', '<C-w>-', '<cmd>resize -3<CR>', opts)
 bind('n', '<C-w>>', '<cmd>vertical resize +6<CR>', opts)
 bind('n', '<C-w><', '<cmd>vertical resize -6<CR>', opts)
 
+-- tab quick swich
+bind('n', '<leader>th', '<CMD>tabfirst<CR>', opts)
+bind('n', '<leader>tl', '<CMD>tablast<CR>', opts)
+bind('n', '<leader>tj', '<CMD>tabnext<CR>', opts)
+bind('n', '<leader>tk', '<CMD>tabprev<CR>', opts)
+bind('n', '<leader>te', '<CMD>tabedit<CR>', opts)
+
+-- select all text
+bind('n', '<C-k><C-a>', 'ggVG', opts)

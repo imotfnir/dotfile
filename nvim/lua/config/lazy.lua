@@ -30,10 +30,11 @@ require("lazy").setup({
 
     { 'echasnovski/mini.nvim', version = '*' }, -- icons
     {import = "plugins.colorscheme"},
-    {import = "plugins.nvim-tree"},
+    {import = "plugins.completion"},
     {import = "plugins.key-analyzer"},
-    {import = "plugins.completion"}
+    {import = "plugins.nvim-tree"},
     -- {import = "plugins.scrollbar"},
+    {import = "plugins.which-key"},
     },
     -- Configure any other settings here. See the documentation for more details.
     -- colorscheme that will be used when installing plugins.
