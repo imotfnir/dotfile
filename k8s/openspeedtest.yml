@@ -1,0 +1,43 @@
+# Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: openspeedtest
+  labels:
+    app: openspeedtest
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: openspeedtest
+  template:
+    metadata:
+      labels:
+        app: openspeedtest
+    spec:
+      containers:
+      - name: openspeedtest
+        image: openspeedtest/latest
+        ports:
+        - containerPort: 3000  # OpenSpeedTest 的默認 HTTP 端口
+        - containerPort: 3001  # SSL 端口（可選）
+
+---
+# Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: openspeedtest-service
+spec:
+  selector:
+    app: openspeedtest
+  ports:
+  - name: http
+    port: 80
+    targetPort: 3000
+    nodePort: 30080  # 外部訪問的端口
+  - name: https
+    port: 443
+    targetPort: 3001
+    nodePort: 30443  # 可選，SSL 端口
+  type: NodePort
