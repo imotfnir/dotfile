@@ -181,3 +181,7 @@ vim.opt.jumpoptions = 'stack,view'
 
 -- colorscheme
 vim.cmd.colorscheme "catppuccin"
+
+-- invisible char
+vim.o.list = true
+vim.o.listchars = "eol:↓,tab:>-,space:·,precedes:←,extends:→"

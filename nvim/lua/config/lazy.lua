@@ -30,6 +30,7 @@ require("lazy").setup({
 
     { 'echasnovski/mini.nvim', version = '*' }, -- icons
     {import = "plugins.colorscheme"},
+    {import = "plugins.nvim-tree"},
     {import = "plugins.key-analyzer"},
     {import = "plugins.completion"}
     -- {import = "plugins.scrollbar"},
