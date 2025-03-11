@@ -34,13 +34,14 @@ require("lazy").setup({
     {import = "plugins.key-analyzer"},  -- let you know which vim shortcuts have not been used
     {import = "plugins.nvim-tree"},     -- file explorer
     -- {import = "plugins.scrollbar"},  -- scrollbar
-    {import = "plugins.telescope"},     --
+    {import = "plugins.telescope"},     -- search
     {import = "plugins.which-key"},     -- shortcut hints
+    {import = "plugins.flash"},         -- motion
     },
     -- Configure any other settings here. See the documentation for more details.
     -- colorscheme that will be used when installing plugins.
     install = {
-      -- colorscheme = {""}
+      colorscheme = {"habamax"}
     },
     -- automatically check for plugin updates
     checker = {enabled = true}

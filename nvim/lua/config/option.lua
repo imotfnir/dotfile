@@ -1,7 +1,7 @@
 -- vim.cmd('source ~/.config/nvim/lua/config/general.vim')
 
 -- leader KEY
-vim.g.mapleader = ','
+vim.g.mapleader = ';'
 
 -- Incremental live completion
 vim.o.inccommand = 'nosplit'
@@ -135,10 +135,10 @@ vim.o.ttimeoutlen = 5
 
 -- Timeout on mapped sequences
 vim.o.timeout = true
-vim.o.timeoutlen = 300
+vim.o.timeoutlen = 1000
 
 -- Show (partial) command in status line
-vim.o.showcmd = false
+vim.o.showcmd = true
 
 -- Configure the number of spaces a tab is counting for
 vim.o.tabstop = 4
