@@ -31,10 +31,11 @@ require("lazy").setup({
     { 'echasnovski/mini.nvim', version = '*' }, -- icons
     {import = "plugins.colorscheme"},
     {import = "plugins.completion"},
-    {import = "plugins.key-analyzer"},
-    {import = "plugins.nvim-tree"},
-    -- {import = "plugins.scrollbar"},
-    {import = "plugins.which-key"},
+    {import = "plugins.key-analyzer"},  -- let you know which vim shortcuts have not been used
+    {import = "plugins.nvim-tree"},     -- file explorer
+    -- {import = "plugins.scrollbar"},  -- scrollbar
+    {import = "plugins.telescope"},     --
+    {import = "plugins.which-key"},     -- shortcut hints
     },
     -- Configure any other settings here. See the documentation for more details.
     -- colorscheme that will be used when installing plugins.
