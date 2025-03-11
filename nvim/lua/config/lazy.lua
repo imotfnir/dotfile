@@ -37,6 +37,7 @@ require("lazy").setup({
     {import = "plugins.telescope"},     -- search
     {import = "plugins.which-key"},     -- shortcut hints
     {import = "plugins.flash"},         -- motion
+    {import = "plugins.dashboard"},     -- dashboard
     },
     -- Configure any other settings here. See the documentation for more details.
     -- colorscheme that will be used when installing plugins.

@@ -1,5 +1,6 @@
 return {
     'nvim-telescope/telescope.nvim',
+    event = 'VeryLazy',
     opts = {
         defaults = {
             -- Default configuration for telescope goes here:

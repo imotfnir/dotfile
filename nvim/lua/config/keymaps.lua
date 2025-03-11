@@ -34,4 +34,3 @@ bind('n', '<C-k><C-a>', 'ggVG', opts)
 
 bind("n", "<C-w>t", "<cmd>NvimTreeToggle<CR>", opts)
 bind("n", "<leader>f", "<cmd>Telescope<CR>", opts)
--- flash
