@@ -63,6 +63,18 @@
       become: yes
       ignore_errors: yes
 
+    - name: Install LSP tools
+      ansible.builtin.package:
+        name:
+          - shfmt
+          - shellcheck
+          - clangd
+          - clang-format
+        state: present
+      become: yes
+      ignore_errors: yes
+      tags: lsp
+
     - name: Install Miniconda
       ansible.builtin.import_tasks: tasks/conda.yml
       become: no
@@ -94,5 +106,4 @@
     - name: Install my-dotfile
       ansible.builtin.import_tasks: tasks/my-dotfile.yml
       become: no
-      when: not git_install_result.failed
       tags: my

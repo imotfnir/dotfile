@@ -5,3 +5,11 @@
 - name: Install pylint
   ansible.builtin.command:
     cmd: pip install pylint
+
+- name: Install pyright
+  ansible.builtin.command:
+    cmd: pip install pylint
+
+- name: Install autopep8
+  ansible.builtin.command:
+    cmd: pip install autopep8
