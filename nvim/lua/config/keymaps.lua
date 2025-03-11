@@ -3,15 +3,15 @@ vim.o.timeoutlen = 2000
 local bind = vim.keymap.set
 local opts = { noremap = true, silent = false }
 
-bind("n", "<C-w>t", ":NvimTreeToggle<CR>", opts)
 
+-- ============= Basic Keymaps =============
 -- copy to system clipboard
 bind('n', '<C-c>', '"+y', opts)
 bind('v', '<C-c>', '"+y', opts)
 
 -- save file
-bind('n', '<C-s>', ':w<CR>', opts)
-bind('v', '<C-s>', ':w<CR>', opts)
+bind('n', '<C-s>', '<cmd>w<CR>', opts)
+bind('v', '<C-s>', '<cmd>w<CR>', opts)
 
 -- split windows
 bind('n', '<C-w>|', '<cmd>vsplit<CR>', opts)
@@ -36,3 +36,9 @@ bind('n', '<leader>te', '<CMD>tabedit<CR>', opts)
 
 -- select all text
 bind('n', '<C-k><C-a>', 'ggVG', opts)
+
+
+-- ============= Plugin Keymaps =============
+
+bind("n", "<C-w>t", "<cmd>NvimTreeToggle<CR>", opts)
+bind("n", "<leader>f", "<cmd>Telescope<CR>", opts)
