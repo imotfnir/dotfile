@@ -178,3 +178,6 @@ vim.g.loaded_netrw = 1
 
 -- ctrl-o/ctrl-i jump options
 vim.opt.jumpoptions = 'stack,view'
+
+-- colorscheme
+vim.cmd.colorscheme "catppuccin"

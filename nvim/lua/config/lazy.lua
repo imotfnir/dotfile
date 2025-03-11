@@ -25,18 +25,20 @@ require("lazy").setup({
         "catgoose/nvim-colorizer.lua",
         event = "BufReadPre",
         opts = { -- set to setup table
-        }
-    }, {
-        'echasnovski/mini.nvim',
-        version = '*'
-    }, 
-    -- {import = "plugins.scrollbar"}, 
-    {import = "plugins.key-analyzer"}, 
+      }
+    },
+
+    { 'echasnovski/mini.nvim', version = '*' }, -- icons
+    {import = "plugins.colorscheme"},
+    {import = "plugins.key-analyzer"},
     {import = "plugins.completion"}
+    -- {import = "plugins.scrollbar"},
     },
     -- Configure any other settings here. See the documentation for more details.
     -- colorscheme that will be used when installing plugins.
-    install = {colorscheme = {"monokai"}},
+    install = {
+      -- colorscheme = {""}
+    },
     -- automatically check for plugin updates
     checker = {enabled = true}
 })
