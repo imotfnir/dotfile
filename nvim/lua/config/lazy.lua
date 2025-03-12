@@ -29,6 +29,7 @@ require("lazy").setup({
     {import = "plugins.colorscheme"},
     {import = "plugins.completion"},
     {import = "plugins.fzf-lua"},
+    {import = "plugins.avante"},
     {import = "plugins.flash"},         -- motion
     {import = "plugins.key-analyzer"},  -- let you know which vim shortcuts have not been used
     {import = "plugins.lsp-config"},    -- lsp
