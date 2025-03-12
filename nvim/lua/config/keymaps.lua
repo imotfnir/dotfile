@@ -34,16 +34,12 @@ bind('n', '<C-k><C-a>', 'ggVG', opts)
 -- Motion
 bind('n', 'H', '^', opts)
 bind('n', 'L', '$', opts)
+bind('v', 'H', '^', opts)
+bind('v', 'L', '$', opts)
 bind('n', 'J', '<C-d>', opts)
 bind('n', 'K', '<C-u>', opts)
 
 -- ============= Plugin Keymaps =============
 
 bind("n", "<C-w>t", "<cmd>NvimTreeToggle<CR>", opts)
--- bind("n", "<leader>ff", "<cmd>Telescope<CR>", opts)
--- bind("n", "<leader>fc", "<cmd>Telescope commands<CR>", opts)
--- bind("n", "<leader>fgst", "<cmd>Telescope git_status<CR>", opts)
--- bind("n", "<leader>fgc", "<cmd>Telescope git_commits<CR>", opts)
--- bind("n", "<leader>fm", "<cmd>Telescope man_pages<CR>", opts)
--- bind("n", "<leader>fb", "<cmd>Telescope buffers<CR>", opts)
--- bind("n", "<leader>fk", "<cmd>Telescope keymaps<CR>", opts)
+bind("n", "<leader>ft", "<cmd>Telescope<CR>", opts)

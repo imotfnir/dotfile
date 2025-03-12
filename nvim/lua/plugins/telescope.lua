@@ -1,6 +1,88 @@
 return {
     'nvim-telescope/telescope.nvim',
     event = 'VeryLazy',
+    keys = {
+        {
+            '<leader>ff',
+            function()
+                require('telescope.builtin').find_files({
+                })
+            end,
+            desc = 'Find Files',
+        },
+        {
+            '<leader>fb',
+            function()
+                require('telescope.builtin').buffers({
+                })
+            end,
+            desc = 'Open buffers in current neovim instance',
+        },
+        {
+            '<leader>fc',
+            function()
+                require('telescope.builtin').commands({
+                })
+            end,
+            desc = 'Lists available plugin/user commands',
+        },
+        {
+            '<leader>fk',
+            function()
+                require('telescope.builtin').keymaps({
+                })
+            end,
+            desc = 'Lists normal mode keymappings',
+        },
+        {
+            '<leader>fk',
+            function()
+                require('telescope.builtin').man_pages({
+                })
+            end,
+            desc = 'man pages',
+        },
+        {
+            '<leader>fgst',
+            function()
+                require('telescope.builtin').git_status({
+                })
+            end,
+            desc = 'git status',
+        },
+        {
+            '<leader>fgb',
+            function()
+                require('telescope.builtin').git_branches({
+                })
+            end,
+            desc = 'git branch',
+        },
+        {
+            '<leader>fgc',
+            function()
+                require('telescope.builtin').git_commits({
+                })
+            end,
+            desc = 'git commit',
+        },
+        {
+            '<leader>fj',
+            function()
+                require('telescope.builtin').jumplist({
+                })
+            end,
+            desc = 'jump',
+        },
+        {
+            '<leader>fl',
+            function()
+                require('telescope.builtin').loclist({
+                })
+            end,
+            desc = 'loclist',
+        },
+    },
     opts = {
         defaults = {
             -- Default configuration for telescope goes here:
