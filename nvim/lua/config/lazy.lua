@@ -28,8 +28,9 @@ require("lazy").setup({
       }
     },
 
-    { 'echasnovski/mini.nvim', version = '*' }, -- icons
+    {'echasnovski/mini.nvim', version = '*'}, -- icons
     {'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
+    {import = "plugins.nvim-treesitter"},
     {import = "plugins.colorscheme"},
     {import = "plugins.completion"},
     {import = "plugins.dashboard"},     -- dashboard
