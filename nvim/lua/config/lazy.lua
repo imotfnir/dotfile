@@ -36,6 +36,8 @@ require("lazy").setup({
     {import = "plugins.dashboard"},     -- dashboard
     {import = "plugins.flash"},         -- motion
     {import = "plugins.key-analyzer"},  -- let you know which vim shortcuts have not been used
+    {import = "plugins.lsp-config"},    -- lsp
+    {import = "plugins.lualine"},       -- status line
     {import = "plugins.nvim-tree"},     -- file explorer
     -- {import = "plugins.scrollbar"},  -- scrollbar
     {import = "plugins.telescope"},     -- search
