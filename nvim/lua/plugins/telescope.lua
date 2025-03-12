@@ -1,6 +1,7 @@
 return {
     'nvim-telescope/telescope.nvim',
     event = 'VeryLazy',
+    enable = false,
     keys = {
         {
             '<leader>ff',

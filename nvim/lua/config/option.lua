@@ -1,8 +1,5 @@
 -- vim.cmd('source ~/.config/nvim/lua/config/general.vim')
 
--- leader KEY
-vim.g.mapleader = ';'
-
 -- Incremental live completion
 vim.o.inccommand = 'nosplit'
 
@@ -48,7 +45,6 @@ vim.o.updatetime = 200
 vim.wo.signcolumn = 'yes'
 
 -- Faster scrolling
-vim.o.lazyredraw = true
 
 -- Decrease redraw time
 vim.o.redrawtime = 100
