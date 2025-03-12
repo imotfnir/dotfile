@@ -22,10 +22,10 @@ bind('n', '<C-w><', '<cmd>vertical resize -6<CR>', opts)
 
 -- tab quick swich
 bind('n', '<leader>tt', '<cmd>tabs<CR>', opts)
-bind('n', '<leader>th', '<cmd>tabfirst<CR>', opts)
-bind('n', '<leader>tl', '<cmd>tablast<CR>', opts)
-bind('n', '<leader>tj', '<cmd>tabnext<CR>', opts)
-bind('n', '<leader>tk', '<cmd>tabprev<CR>', opts)
+bind('n', '<leader>tH', '<cmd>tabfirst<CR>', opts)
+bind('n', '<leader>tL', '<cmd>tablast<CR>', opts)
+bind('n', '<leader>tl', '<cmd>tabnext<CR>', opts)
+bind('n', '<leader>th', '<cmd>tabprev<CR>', opts)
 bind('n', '<leader>te', '<cmd>tabedit<CR>', opts)
 
 -- select all text
