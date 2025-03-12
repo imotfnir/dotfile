@@ -1,2 +1,3 @@
 *.log
-nvim/*.json
+.vscode
+nvim/lazyvim.json
