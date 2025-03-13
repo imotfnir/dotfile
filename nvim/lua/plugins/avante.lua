@@ -5,7 +5,7 @@ return {{
     opts = {
         -- add any opts here
         -- for example
-        provider = "openai",
+        provider = "gemini",
         openai = {
             endpoint = "https://api.openai.com/v1",
             model = "gpt-4o", -- your desired model (or use gpt-4o, etc.)
@@ -13,6 +13,13 @@ return {{
             temperature = 0, -- adjust if needed
             max_tokens = 4096
             -- reasoning_effort = "high" -- only supported for reasoning models (o1, etc.)
+        },
+        gemini = {
+            -- endpoint = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent",
+            model = "gemini-1.5-pro",
+            timeout = 30000,
+            temperature = 0,
+            max_tokens = 4096
         }
     },
     -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
