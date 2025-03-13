@@ -20,7 +20,7 @@ return {{
             timeout = 30000,
             temperature = 0,
             max_tokens = 4096
-        }
+        },
     },
     -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
     build = "make",
