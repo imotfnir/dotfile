@@ -1,7 +1,7 @@
 services:
   dashy:
-    image: lissy93/dashy
-    container_name: dashy
+    image: "lissy93/dashy"
+    container_name: "dashy"
     restart: always
     volumes:
       - ${DATA_DIR}/dashy:/app/user-data
@@ -10,7 +10,7 @@ services:
     environment:
       - NODE_ENV=production
   beszel:
-    image: "henrygd/beszel"
+    image: "henrygd/beszel:latest"
     container_name: "beszel"
     restart: unless-stopped
     ports:
@@ -18,8 +18,8 @@ services:
     volumes:
       - ${DATA_DIR}/beszel_data:/beszel_data
   portainer:
-    image: portainer/portainer-ce
-    container_name: portainer
+    image: "portainer/portainer-ce:latest"
+    container_name: "portainer"
     restart: always
     command: -H unix:///var/run/docker.sock
     ports:
