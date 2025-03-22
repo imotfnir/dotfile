@@ -18,5 +18,9 @@ plugins=(
     conda
     kubectl
     systemd
+    fzf
+    fzf-tab
 )
+
 precmd () { echo -n "\x1b]1337;CurrentDir=$(pwd)\x07" }
+
