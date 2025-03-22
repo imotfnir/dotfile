@@ -37,6 +37,7 @@ require("lazy").setup({
     { import = "plugins.key-analyzer" }, -- let you know which vim shortcuts have not been used
     { import = "plugins.lsp-config" }, -- lsp
     { import = "plugins.lualine" }, -- status line
+    { import = "plugins.conform" }, -- formatter
     -- {import = "plugins.nvim-tree"},     -- file explorer
     -- {import = "plugins.telescope"},     -- search
     { import = "plugins.which-key" }, -- shortcut hints
