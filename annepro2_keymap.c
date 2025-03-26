@@ -15,6 +15,7 @@ enum custom_keycodes {
     CTRL_C = SAFE_RANGE,
     CTRL_V,
     CTRL_SHIFT_M,
+    ALT_CTRL_GUI_L,
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
@@ -28,6 +29,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             return false;
         case CTRL_SHIFT_M:
             SEND_STRING(SS_LSFT(SS_LCTL("m")));
+            return false;
+        case ALT_CTRL_GUI_L:
+            SEND_STRING(SS_LALT(SS_LCTL(SS_LGUI("l"))));
             return false;
         }
     }
@@ -44,9 +48,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [1] = LAYOUT_60_ansi(KC_GRV, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12, KC_F13,
                          KC_TRNS, KC_TRNS, KC_UP, KC_TRNS, KC_F15, KC_TRNS, KC_BSPC, KC_HOME, KC_END, KC_DEL, KC_TRNS, KC_HOME, KC_END, KC_PSCR,
                          KC_TRNS, KC_LEFT, KC_DOWN, KC_RGHT, KC_F14, KC_TRNS, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_PGUP, KC_PGDN, KC_TRNS,
-                         KC_TRNS, KC_TRNS, KC_TRNS, CTRL_C, CTRL_V, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_INS, KC_DEL, KC_TRNS,
+                         KC_TRNS, KC_TRNS, KC_TRNS, CTRL_C, CTRL_V, KC_TRNS, KC_TRNS, CTRL_SHIFT_M, KC_TRNS, KC_INS, KC_DEL, KC_TRNS,
                          KC_TRNS, KC_TRNS, KC_TRNS, MS_BTN1, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS),
-    [2] = LAYOUT_60_ansi(KC_TRNS, QK_REP, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_SLEP, KC_WAKE, KC_TRNS,
+    [2] = LAYOUT_60_ansi(KC_TRNS, QK_REP, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, ALT_CTRL_GUI_L, KC_TRNS, KC_TRNS,
                          KC_TRNS, MS_BTN1, MS_BTN3, MS_BTN2, MS_WHLU, KC_TRNS, MS_LEFT, MS_DOWN, MS_UP, MS_RGHT, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
                          KC_TRNS, MS_WHLL, MS_BTN4, MS_WHLR, MS_WHLD, KC_TRNS, KC_TRNS, KC_LPRN, KC_RPRN, KC_LBRC, KC_RBRC, KC_TRNS, KC_TRNS,
                          KC_TRNS, MS_ACL0, MS_ACL1, MS_ACL2, KC_TRNS, KC_TRNS, KC_DQUO, KC_LCBR, KC_RCBR, KC_TRNS, KC_TRNS, KC_TRNS,
