@@ -11,6 +11,11 @@
 
 #define NO_ALT_REPEAT_KEY
 
+void keyboard_post_init_user(void);
+void update_led_colors(void);
+layer_state_t layer_state_set_user(layer_state_t state);
+bool led_update_user(led_t leds);
+
 enum custom_keycodes {
     CTRL_C = SAFE_RANGE,
     CTRL_V,
@@ -87,15 +92,47 @@ void keyboard_post_init_user(void) {
     ap2_led_set_profile(7);
 }
 
+void update_led_colors(void) {
+    ap2_led_reset_foreground_color();
+    const ap2_led_t color_yellow = {.p.red = 0xff, .p.green = 0xff, .p.blue = 0x00, .p.alpha = 0xff};
+    const ap2_led_t color_red = {.p.red = 0xff, .p.green = 0x00, .p.blue = 0x00, .p.alpha = 0xff};
+    // Set number key to yellow
+    for (size_t col = 1; col < 13; col++) {
+        ap2_led_colors_set_key(0, col, color_yellow);
+    }
+    for (size_t col = 1; col < 13; col++) {
+        ap2_led_colors_set_key(1, col, color_red);
+    }
+    for (size_t col = 1; col < 12; col++) {
+        ap2_led_colors_set_key(2, col, color_red);
+    }
+    for (size_t col = 1; col < 11; col++) {
+        ap2_led_colors_set_key(3, col, color_red);
+    }
+}
+
 layer_state_t layer_state_set_user(layer_state_t state) {
     switch (get_highest_layer(state)) {
+    case BASE:
+        update_led_colors();
+        break;
     case FN1:
-        // Set the leds to green
+        // Set the leds to #00ff00
         ap2_led_set_foreground_color(0x00, 0xFF, 0x00);
         break;
     case FN2:
-        // Set the leds to blue
+        // Set the leds to #00ffcd
+        ap2_led_set_foreground_color(0x00, 0xFF, 0xCD);
+        break;
+    case FN3:
+        // Set the leds to #eeff00
+        ap2_led_set_foreground_color(0xEE, 0xFF, 0x00);
+        break;
+    case FN4:
         ap2_led_set_foreground_color(0x00, 0x00, 0xFF);
+        break;
+    case FN5:
+        ap2_led_set_foreground_color(0xFF, 0xFF, 0xFF);
         break;
     default:
         // Reset back to the current profile
