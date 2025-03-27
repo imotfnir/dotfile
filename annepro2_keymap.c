@@ -18,6 +18,15 @@ enum custom_keycodes {
     ALT_CTRL_GUI_L,
 };
 
+enum key_layers {
+    BASE,
+    FN1,
+    FN2,
+    FN3,
+    FN4,
+    FN5,
+};
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     if (record->event.pressed) {
         switch (keycode) {
@@ -40,38 +49,78 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    [0] = LAYOUT_60_ansi(KC_ESC, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_MINS, KC_EQL, KC_BSPC,
+    [BASE] = LAYOUT_60_ansi(KC_ESC, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_MINS, KC_EQL, KC_BSPC,
                          LT(2, KC_TAB), KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_LBRC, KC_RBRC, KC_BSLS,
                          MO(1), KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT, KC_ENT,
                          KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, RSFT_T(KC_UP),
                          KC_LCTL, KC_LGUI, KC_LALT, KC_SPC, MO(5), LT(3, KC_LEFT), LT(4, KC_DOWN), RCTL_T(KC_RGHT)),
-    [1] = LAYOUT_60_ansi(KC_GRV, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12, KC_F13,
+    [FN1] = LAYOUT_60_ansi(KC_GRV, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12, KC_F13,
                          KC_TRNS, KC_ESC, KC_UP, KC_TRNS, KC_F15, KC_TRNS, KC_BSPC, KC_HOME, KC_END, KC_DEL, KC_TRNS, KC_HOME, KC_END, KC_PSCR,
                          KC_TRNS, KC_LEFT, KC_DOWN, KC_RGHT, KC_F14, KC_TRNS, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_PGUP, KC_PGDN, KC_TRNS,
                          KC_TRNS, KC_TRNS, KC_TRNS, CTRL_C, CTRL_V, KC_TRNS, KC_TRNS, CTRL_SHIFT_M, KC_TRNS, KC_INS, KC_DEL, KC_TRNS,
                          KC_TRNS, KC_TRNS, KC_TRNS, MS_BTN1, KC_APP, KC_TRNS, KC_TRNS, KC_TRNS),
-    [2] = LAYOUT_60_ansi(QK_REP, KC_F13, KC_F14, KC_F15, KC_F16, KC_F17, KC_F18, KC_F19, KC_F20, KC_F21, KC_F22, KC_F23, KC_F24, KC_TRNS,
+    [FN2] = LAYOUT_60_ansi(QK_REP, KC_F13, KC_F14, KC_F15, KC_F16, KC_F17, KC_F18, KC_F19, KC_F20, KC_F21, KC_F22, KC_F23, KC_F24, KC_TRNS,
                          KC_TRNS, MS_BTN1, MS_BTN3, MS_BTN2, MS_WHLU, KC_TRNS, MS_LEFT, MS_DOWN, MS_UP, MS_RGHT, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
                          KC_TRNS, MS_WHLL, MS_BTN4, MS_WHLR, MS_WHLD, KC_TRNS, KC_TRNS, KC_LPRN, KC_RPRN, KC_LBRC, KC_RBRC, KC_TRNS, KC_TRNS,
                          KC_TRNS, MS_ACL0, MS_ACL1, MS_ACL2, KC_TRNS, KC_TRNS, KC_DQUO, KC_LCBR, KC_RCBR, KC_TRNS, KC_TRNS, KC_TRNS,
                          KC_TRNS, KC_TRNS, KC_TRNS, MS_BTN1, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS),
-    [3] = LAYOUT_60_ansi(KC_TRNS, KC_NUM, KC_KP_SLASH, KC_KP_ASTERISK, KC_KP_MINUS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_VOLD, KC_VOLU, KC_MUTE,
+    [FN3] = LAYOUT_60_ansi(KC_TRNS, KC_NUM, KC_KP_SLASH, KC_KP_ASTERISK, KC_KP_MINUS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_VOLD, KC_VOLU, KC_MUTE,
                          KC_TRNS, KC_P7, KC_P8, KC_P9, KC_KP_PLUS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_BRID, KC_BRIU, KC_TRNS, KC_TRNS, KC_MSTP,
                          KC_CAPS, KC_P4, KC_P5, KC_P6, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_PGUP, KC_PGDN, KC_MPLY,
                          KC_KP_0, KC_P1, KC_P2, KC_P3, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_DEL, KC_TRNS,
                          KC_TRNS, KC_TRNS, KC_KP_DOT, KC_KP_ENTER, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS),
-    [4] = LAYOUT_60_ansi(KC_TRNS, KC_AP2_BT1, KC_AP2_BT2, KC_AP2_BT3, KC_AP2_BT4, KC_AP2_BT_UNPAIR, KC_AP_LED_ON, KC_AP_LED_OFF, KC_AP_LED_PREV_PROFILE, KC_AP_LED_NEXT_PROFILE, BL_TOGG, BL_DOWN, BL_UP, KC_TRNS,
-                         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+    [FN4] = LAYOUT_60_ansi(KC_TRNS, KC_AP2_BT1, KC_AP2_BT2, KC_AP2_BT3, KC_AP2_BT4, KC_AP2_BT_UNPAIR, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_AP_LED_PREV_PROFILE, KC_AP_LED_NEXT_PROFILE, KC_AP_LED_TOG,
+                         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_AP_LED_SPEED, KC_AP_LED_NEXT_INTENSITY, KC_TRNS,
                          KC_TRNS, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_TRNS, KC_TRNS,
                          KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, ALT_CTRL_GUI_L, KC_TRNS,
                          KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS),
-    [5] = LAYOUT_60_ansi(KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+    [FN5] = LAYOUT_60_ansi(KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
                          KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
                          KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
                          KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
                          KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS),
 };
 // clang-format on
+
+void keyboard_post_init_user(void) {
+    ap2_led_enable();
+    ap2_led_set_profile(7);
+}
+
+layer_state_t layer_state_set_user(layer_state_t state) {
+    switch (get_highest_layer(state)) {
+    case FN1:
+        // Set the leds to green
+        ap2_led_set_foreground_color(0x00, 0xFF, 0x00);
+        break;
+    case FN2:
+        // Set the leds to blue
+        ap2_led_set_foreground_color(0x00, 0x00, 0xFF);
+        break;
+    default:
+        // Reset back to the current profile
+        ap2_led_reset_foreground_color();
+        break;
+    }
+    return state;
+}
+
+// The function to handle the caps lock logic
+// It's called after the capslock changes state or after entering layers 1 and 2.
+bool led_update_user(led_t leds) {
+    if (leds.caps_lock) {
+        // Set the caps-lock to red
+        const ap2_led_t color = {.p.red = 0xff, .p.green = 0x00, .p.blue = 0x00, .p.alpha = 0xff};
+        ap2_led_sticky_set_key(2, 0, color);
+        /* NOTE: Instead of colouring the capslock only, you can change the whole
+           keyboard with ap2_led_mask_set_mono */
+    } else {
+        // Reset the capslock if there is no layer active
+        ap2_led_unset_sticky_key(2, 0);
+    }
+
+    return true;
+}
 
 #ifdef OTHER_KEYMAP_C
 #include OTHER_KEYMAP_C
