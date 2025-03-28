@@ -22,3 +22,5 @@ SRC = \
 
 # Custom feature
 REPEAT_KEY_ENABLE = yes
+# LEADER_ENABLE = yes
+# JOYSTICK_ENABLE = yes
