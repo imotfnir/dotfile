@@ -30,6 +30,9 @@ enum key_layers {
     FN3,
     FN4,
     FN5,
+    FN6,
+    FN7,
+    FN8,
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
@@ -55,31 +58,54 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [BASE] = LAYOUT_60_ansi(KC_ESC, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_MINS, KC_EQL, KC_BSPC,
-                         LT(2, KC_TAB), KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_LBRC, KC_RBRC, KC_BSLS,
-                         MO(1), KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT, KC_ENT,
+                         LGUI_T(KC_TAB), KC_Q, LALT_T(KC_W), LSFT_T(KC_E), LCTL_T(KC_R), KC_T, KC_Y, RCTL_T(KC_U), RSFT_T(KC_I), RALT_T(KC_O), KC_P, KC_LBRC, KC_RBRC, KC_BSLS,
+                         TT(1), KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT, KC_ENT,
                          KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, RSFT_T(KC_UP),
-                         KC_LCTL, KC_LGUI, KC_LALT, KC_SPC, MO(5), LT(3, KC_LEFT), LT(4, KC_DOWN), RCTL_T(KC_RGHT)),
+                         TT(6), TT(7), TT(2), KC_SPC, TT(5), TT(3), TT(4), RCTL_T(KC_RGHT)),
+
     [FN1] = LAYOUT_60_ansi(KC_GRV, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12, KC_F13,
-                         KC_TRNS, KC_ESC, KC_UP, KC_TRNS, KC_F15, KC_TRNS, KC_BSPC, KC_HOME, KC_END, KC_DEL, KC_TRNS, KC_HOME, KC_END, KC_PSCR,
-                         KC_TRNS, KC_LEFT, KC_DOWN, KC_RGHT, KC_F14, KC_TRNS, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_PGUP, KC_PGDN, KC_TRNS,
+                         KC_TRNS, KC_ESC, KC_UP, KC_TRNS, KC_F15, KC_TRNS, MS_LEFT, MS_DOWN, MS_UP, MS_RGHT, KC_TRNS, KC_HOME, KC_END, KC_PSCR,
+                         TG(1), KC_LEFT, KC_DOWN, KC_RGHT, KC_F14, KC_TRNS, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_PGUP, KC_PGDN, KC_TRNS,
                          KC_TRNS, KC_TRNS, KC_TRNS, CTRL_C, CTRL_V, KC_TRNS, KC_TRNS, CTRL_SHIFT_M, KC_TRNS, KC_INS, KC_DEL, KC_TRNS,
                          KC_TRNS, KC_TRNS, KC_TRNS, MS_BTN1, KC_APP, KC_TRNS, KC_TRNS, KC_TRNS),
+
     [FN2] = LAYOUT_60_ansi(QK_REP, KC_F13, KC_F14, KC_F15, KC_F16, KC_F17, KC_F18, KC_F19, KC_F20, KC_F21, KC_F22, KC_F23, KC_F24, KC_TRNS,
-                         KC_TRNS, MS_BTN1, MS_BTN3, MS_BTN2, MS_WHLU, KC_TRNS, MS_LEFT, MS_DOWN, MS_UP, MS_RGHT, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-                         KC_TRNS, MS_WHLL, MS_BTN4, MS_WHLR, MS_WHLD, KC_TRNS, KC_TRNS, KC_LPRN, KC_RPRN, KC_LBRC, KC_RBRC, KC_TRNS, KC_TRNS,
-                         KC_TRNS, MS_ACL0, MS_ACL1, MS_ACL2, KC_TRNS, KC_TRNS, KC_DQUO, KC_LCBR, KC_RCBR, KC_TRNS, KC_TRNS, KC_TRNS,
-                         KC_TRNS, KC_TRNS, KC_TRNS, MS_BTN1, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS),
-    [FN3] = LAYOUT_60_ansi(KC_TRNS, KC_NUM, KC_KP_SLASH, KC_KP_ASTERISK, KC_KP_MINUS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_VOLD, KC_VOLU, KC_MUTE,
-                         KC_TRNS, KC_P7, KC_P8, KC_P9, KC_KP_PLUS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_BRID, KC_BRIU, KC_TRNS, KC_TRNS, KC_MSTP,
-                         KC_CAPS, KC_P4, KC_P5, KC_P6, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_PGUP, KC_PGDN, KC_MPLY,
-                         KC_KP_0, KC_P1, KC_P2, KC_P3, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_DEL, KC_TRNS,
-                         KC_TRNS, KC_TRNS, KC_KP_DOT, KC_KP_ENTER, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS),
-    [FN4] = LAYOUT_60_ansi(KC_TRNS, KC_AP2_BT1, KC_AP2_BT2, KC_AP2_BT3, KC_AP2_BT4, KC_AP2_BT_UNPAIR, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_AP_LED_PREV_PROFILE, KC_AP_LED_NEXT_PROFILE, KC_AP_LED_TOG,
-                         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_AP_LED_SPEED, KC_AP_LED_NEXT_INTENSITY, KC_TRNS,
-                         KC_TRNS, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_TRNS, KC_TRNS,
-                         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, ALT_CTRL_GUI_L, KC_TRNS,
-                         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS),
-    [FN5] = LAYOUT_60_ansi(KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+                         KC_TRNS, MS_BTN1, MS_BTN3, MS_BTN2, MS_WHLU, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+                         KC_TRNS, MS_WHLL, MS_BTN4, MS_WHLR, MS_WHLD, KC_TRNS, KC_BSPC, KC_HOME, KC_END, KC_DEL, KC_TRNS, KC_TRNS, KC_TRNS,
+                         KC_TRNS, MS_ACL0, MS_ACL1, MS_ACL2, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, ALT_CTRL_GUI_L, KC_TRNS,
+                         KC_TRNS, KC_TRNS, TG(2), MS_BTN1, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS),
+
+    [FN3] = LAYOUT_60_ansi(KC_TRNS, KC_AP2_BT1, KC_AP2_BT2, KC_AP2_BT3, KC_AP2_BT4, KC_AP2_BT_UNPAIR, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_AP_LED_TOG, KC_VOLD, KC_VOLU, KC_MUTE,
+                         KC_TRNS, KC_TRNS, KC_UP, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_BRID, KC_BRIU, KC_AP_LED_SPEED, KC_AP_LED_NEXT_INTENSITY, KC_MSTP,
+                         KC_TRNS, KC_LEFT, KC_DOWN, KC_RIGHT, KC_TRNS, KC_TRNS, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT, KC_PGUP, KC_PGDN, KC_MPLY,
+                         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_AP_LED_PREV_PROFILE, KC_AP_LED_NEXT_PROFILE, KC_DEL, KC_TRNS,
+                         KC_TRNS, KC_TRNS, KC_TRNS, KC_KP_ENTER, KC_TRNS, TG(3), KC_TRNS, KC_TRNS),
+
+    [FN4] = LAYOUT_60_ansi(KC_TRNS, KC_NUM, KC_KP_SLASH, KC_KP_ASTERISK, KC_KP_MINUS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+                         KC_TRNS, KC_KP_7, KC_KP_8, KC_KP_9, KC_KP_PLUS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+                         KC_CAPS, KC_KP_4, KC_KP_5, KC_KP_6, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+                         KC_KP_0, KC_KP_1, KC_KP_2, KC_KP_3, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+                         KC_TRNS, KC_TRNS, KC_KP_DOT, KC_KP_ENTER, KC_TRNS, KC_TRNS, TG(4), KC_TRNS),
+
+    [FN5] = LAYOUT_60_ansi(KC_ESC, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_MINS, KC_EQL, KC_BSPC,
+                         KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_LBRC, KC_RBRC, KC_BSLS,
+                         MO(1), KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT, KC_ENT,
+                         KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, RSFT_T(KC_UP),
+                         KC_LCTL, KC_LGUI, KC_LALT, KC_SPC, TG(5), RALT_T(KC_LEFT), RGUI_T(KC_DOWN), RCTL_T(KC_RGHT)),
+
+    [FN6] = LAYOUT_60_ansi(KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_KP_MINUS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+                         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+                         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+                         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+                         KC_TRNS, TG(6), KC_TRNS, KC_KP_ENTER, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS),
+
+    [FN7] = LAYOUT_60_ansi(KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+                         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+                         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+                         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+                         KC_TRNS, TG(7), KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS),
+
+    [FN8] = LAYOUT_60_ansi(KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
                          KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
                          KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
                          KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
@@ -89,7 +115,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 void keyboard_post_init_user(void) {
     ap2_led_enable();
-    ap2_led_set_profile(7);
+    ap2_led_set_profile(3);
 }
 
 void update_led_colors(void) {
@@ -113,25 +139,28 @@ void update_led_colors(void) {
 
 layer_state_t layer_state_set_user(layer_state_t state) {
     switch (get_highest_layer(state)) {
-    case BASE:
-        update_led_colors();
-        break;
-    case FN1:
+    // case BASE:
+    //     update_led_colors();
+    //     break;
+    case FN3:
         // Set the leds to #00ff00
         ap2_led_set_foreground_color(0x00, 0xFF, 0x00);
         break;
-    case FN2:
+    case FN4:
         // Set the leds to #00ffcd
         ap2_led_set_foreground_color(0x00, 0xFF, 0xCD);
         break;
-    case FN3:
+    case FN5:
         // Set the leds to #eeff00
         ap2_led_set_foreground_color(0xEE, 0xFF, 0x00);
         break;
-    case FN4:
+    case FN6:
         ap2_led_set_foreground_color(0x00, 0x00, 0xFF);
         break;
-    case FN5:
+    case FN7:
+        ap2_led_set_foreground_color(0xFF, 0x00, 0x00);
+        break;
+    case FN8:
         ap2_led_set_foreground_color(0xFF, 0xFF, 0xFF);
         break;
     default:
