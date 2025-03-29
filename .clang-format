@@ -4,9 +4,9 @@ AccessModifierOffset: -2
 AlignAfterOpenBracket: Align
 AlignArrayOfStructures: None
 AlignConsecutiveAssignments:
-  Enabled:         false
-  AcrossEmptyLines: false
-  AcrossComments:  false
+  Enabled:         true
+  AcrossEmptyLines: true
+  AcrossComments:  true
   AlignCompound:   false
   AlignFunctionPointers: false
   PadOperators:    true
@@ -25,9 +25,9 @@ AlignConsecutiveDeclarations:
   AlignFunctionPointers: false
   PadOperators:    false
 AlignConsecutiveMacros:
-  Enabled:         false
-  AcrossEmptyLines: false
-  AcrossComments:  false
+  Enabled:         true
+  AcrossEmptyLines: true
+  AcrossComments:  true
   AlignCompound:   false
   AlignFunctionPointers: false
   PadOperators:    false
