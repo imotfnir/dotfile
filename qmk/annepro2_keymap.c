@@ -10,9 +10,34 @@
  */
 
 #define NO_ALT_REPEAT_KEY
-#define MIN_LAYERS FN3
-#define MAX_LAYERS FN8
+#define MIN_LAYERS  FN3
+#define MAX_LAYERS  FN8
 #define LAYER_RANGE (MAX_LAYERS - MIN_LAYERS + 1)
+
+#define KC_ALPHA    UP(G_alpha, G_ALPHA)     // α / Α
+#define KC_BETA     UP(G_beta, G_BETA)       // β / Β
+#define KC_GAMMA    UP(G_gamma, G_GAMMA)     // γ / Γ
+#define KC_DELTA    UP(G_delta, G_DELTA)     // δ / Δ
+#define KC_EPSILON  UP(G_epsilon, G_EPSILON) // ε / Ε
+#define KC_ZETA     UP(G_zeta, G_ZETA)       // ζ / Ζ
+#define KC_ETA      UP(G_eta, G_ETA)         // η / Η
+#define KC_THETA    UP(G_theta, G_THETA)     // θ / Θ
+#define KC_IOTA     UP(G_iota, G_IOTA)       // ι / Ι
+#define KC_KAPPA    UP(G_kappa, G_KAPPA)     // κ / Κ
+#define KC_LAMBDA   UP(G_lambda, G_LAMBDA)   // λ / Λ
+#define KC_MU       UP(G_mu, G_MU)           // μ / Μ
+#define KC_NU       UP(G_nu, G_NU)           // ν / Ν
+#define KC_XI       UP(G_xi, G_XI)           // ξ / Ξ
+#define KC_OMICRON  UP(G_omicron, G_OMICRON) // ο / Ο
+#define KC_PI       UP(G_pi, G_PI)           // π / Π
+#define KC_RHO      UP(G_rho, G_RHO)         // ρ / Ρ
+#define KC_SIGMA    UP(G_sigma, G_SIGMA)     // σ / Σ
+#define KC_TAU      UP(G_tau, G_TAU)         // τ / Τ
+#define KC_UPSILON  UP(G_upsilon, G_UPSILON) // υ / Υ
+#define KC_PHI      UP(G_phi, G_PHI)         // φ / Φ
+#define KC_CHI      UP(G_chi, G_CHI)         // χ / Χ
+#define KC_PSI      UP(G_psi, G_PSI)         // ψ / Ψ
+#define KC_OMEGA    UP(G_omega, G_OMEGA)     // ω / Ω
 
 void keyboard_post_init_user(void);
 void update_led_colors(void);
@@ -37,6 +62,58 @@ enum key_layers {
     FN8,
     FN9,
     FN10,
+};
+
+enum greek_letters {
+    G_ALPHA = 0x0391, // Α
+    G_BETA,           // Β
+    G_GAMMA,          // Γ
+    G_DELTA,          // Δ
+    G_EPSILON,        // Ε
+    G_ZETA,           // Ζ
+    G_ETA,            // Η
+    G_THETA,          // Θ
+    G_IOTA,           // Ι
+    G_KAPPA,          // Κ
+    G_LAMBDA,         // Λ
+    G_MU,             // Μ
+    G_NU,             // Ν
+    G_XI,             // Ξ
+    G_OMICRON,        // Ο
+    G_PI,             // Π
+    G_RHO,            // Ρ
+    G_SIGMA,          // Σ
+    G_TAU,            // Τ
+    G_UPSILON,        // Υ
+    G_PHI,            // Φ
+    G_CHI,            // Χ
+    G_PSI,            // Ψ
+    G_OMEGA,          // Ω
+
+    G_alpha = 0x03B1, // α
+    G_beta,           // β
+    G_gamma,          // γ
+    G_delta,          // δ
+    G_epsilon,        // ε
+    G_zeta,           // ζ
+    G_eta,            // η
+    G_theta,          // θ
+    G_iota,           // ι
+    G_kappa,          // κ
+    G_lambda,         // λ
+    G_mu,             // μ
+    G_nu,             // ν
+    G_xi,             // ξ
+    G_omicron,        // ο
+    G_pi,             // π
+    G_rho,            // ρ
+    G_sigma,          // σ
+    G_tau,            // τ
+    G_upsilon,        // υ
+    G_phi,            // φ
+    G_chi,            // χ
+    G_psi,            // ψ
+    G_omega           // ω
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
@@ -81,7 +158,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [FN1] = LAYOUT_60_ansi(KC_GRV, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12, KC_F13,
                          RCS(KC_TAB), LSFT(KC_HOME), LSFT(KC_END), KC_TRNS, KC_TRNS, KC_TRNS, MS_LEFT, MS_DOWN, MS_UP, MS_RGHT, KC_TRNS, KC_HOME, KC_END, KC_PSCR,
                          TG(1), KC_HOME, KC_END, KC_DEL, KC_BSPC, KC_TRNS, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_PGUP, KC_PGDN, KC_TRNS,
-                         KC_TRNS, KC_TRNS, KC_TRNS, LCTL(KC_C), LCTL(KC_V), KC_TRNS, KC_TRNS, RCS(KC_M), KC_TRNS, KC_INS, KC_DEL, KC_TRNS,
+                         KC_TRNS, KC_TRNS, KC_TRNS, LCTL(KC_C), LCTL(KC_V), KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_INS, KC_DEL, KC_TRNS,
                          KC_TRNS, KC_TRNS, KC_TRNS, MS_BTN1, CLEAR_LAYER, KC_TRNS, KC_APP, KC_TRNS),
 
     [FN2] = LAYOUT_60_ansi(QK_REP, KC_F13, KC_F14, KC_F15, KC_F16, KC_F17, KC_F18, KC_F19, KC_F20, KC_F21, KC_F22, KC_F23, KC_F24, KC_TRNS,
@@ -93,7 +170,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [FN3] = LAYOUT_60_ansi(KC_TRNS, KC_AP2_BT1, KC_AP2_BT2, KC_AP2_BT3, KC_AP2_BT4, KC_AP2_BT_UNPAIR, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_AP_LED_TOG, KC_VOLD, KC_VOLU, KC_MUTE,
                          KC_TRNS, KC_TRNS, KC_UP, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_BRID, KC_BRIU, KC_AP_LED_SPEED, KC_AP_LED_NEXT_INTENSITY, KC_MSTP,
                          KC_TRNS, KC_LEFT, KC_DOWN, KC_RIGHT, KC_TRNS, KC_TRNS, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT, KC_PGUP, KC_PGDN, KC_MPLY,
-                         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_AP_LED_PREV_PROFILE, KC_AP_LED_NEXT_PROFILE, KC_DEL, KC_TRNS,
+                         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, MEH(KC_N), MEH(KC_M), KC_AP_LED_PREV_PROFILE, KC_AP_LED_NEXT_PROFILE, KC_DEL, KC_TRNS,
                          KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, CLEAR_LAYER, LAYER_DOWN, LAYER_UP, KC_TRNS),
 
     [FN4] = LAYOUT_60_ansi(KC_TRNS, KC_NUM, KC_KP_SLASH, KC_KP_ASTERISK, KC_KP_MINUS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
@@ -108,10 +185,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                          KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
                          KC_TRNS, KC_TRNS, KC_TRNS, MS_BTN1, CLEAR_LAYER, LAYER_DOWN, LAYER_UP, KC_TRNS),
 
-    [FN6] = LAYOUT_60_ansi(KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_KP_MINUS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-                         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-                         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-                         KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+    [FN6] = LAYOUT_60_ansi(UC_WINC, KC_TRNS, KC_TRNS, KC_TRNS, KC_KP_MINUS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+                         UC_WIN, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+                         UC_LINX, KC_ALPHA, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+                         UC_MAC, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_BETA, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
                          KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, CLEAR_LAYER, LAYER_DOWN, LAYER_UP, KC_TRNS),
 
     [FN7] = LAYOUT_60_ansi(KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
@@ -136,7 +213,7 @@ void keyboard_post_init_user(void) {
 void update_led_colors(void) {
     ap2_led_reset_foreground_color();
     const ap2_led_t color_yellow = {.p.red = 0xff, .p.green = 0xff, .p.blue = 0x00, .p.alpha = 0xff};
-    const ap2_led_t color_red = {.p.red = 0xff, .p.green = 0x00, .p.blue = 0x00, .p.alpha = 0xff};
+    const ap2_led_t color_red    = {.p.red = 0xff, .p.green = 0x00, .p.blue = 0x00, .p.alpha = 0xff};
     // Set number key to yellow
     for (size_t col = 1; col < 13; col++) {
         ap2_led_colors_set_key(0, col, color_yellow);

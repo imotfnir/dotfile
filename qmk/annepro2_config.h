@@ -45,3 +45,4 @@
 // Custom feature
 #define TAPPING_TERM 175
 #define TAPPING_TOGGLE 2
+#define UNICODE_KEY_WINC KC_RIGHT_ALT
