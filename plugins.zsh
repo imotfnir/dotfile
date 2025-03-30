@@ -30,8 +30,3 @@ if [[ -z "${__zoxide_z+x}" ]]; then
         __zoxide_z "$@"
     }
 fi
-
-history-count(){
-     omz_history -f | awk '{print $4}' | sort -r | uniq -c | sort -n
-}
-
