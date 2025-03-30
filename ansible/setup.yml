@@ -68,6 +68,8 @@
           - tracert
           - xorg
           - np
+          - bat
+          - git-delta
         state: present
       become: yes
       ignore_errors: yes

@@ -6,6 +6,7 @@ alias dockerl="lazydocker"
 alias sct="systemctl-tui"
 alias vim="nvim"
 alias ai="aichat"
+alias cat="batcat --paging=never"
 
 history-count() {
     omz_history -f | awk '{print $4}' | sort -r | uniq -c | sort -n
