@@ -53,6 +53,8 @@ enum custom_keycodes {
     LAYER_4,
     LAYER_5,
     LAYER_6,
+    LAYER_7,
+    LAYER_8,
 };
 
 enum key_layers {
@@ -168,6 +170,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         layer_clear();
         layer_on(6);
         return false;
+    case LAYER_7:
+        layer_clear();
+        layer_on(7);
+        return false;
+    case LAYER_8:
+        layer_clear();
+        layer_on(8);
+        return false;
     }
 
     return true;
@@ -193,7 +203,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                          KC_TRNS, KC_6, KC_7, KC_8, KC_9, LSFT(KC_EQL), LSFT(KC_8), KC_2, KC_3, KC_4, KC_5, KC_TRNS,
                          KC_LSFT, KC_TRNS, KC_TRNS, KC_LSFT, CLEAR_LAYER, KC_TRNS, KC_TRNS, KC_TRNS),
 
-    [FN3] = LAYOUT_60_ansi(KC_TRNS, KC_AP2_BT1, KC_AP2_BT2, KC_AP2_BT3, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_AP_LED_TOG, KC_VOLD, KC_VOLU, KC_MUTE,
+    [FN3] = LAYOUT_60_ansi(KC_TRNS, KC_AP2_BT1, KC_AP2_BT2, KC_AP2_BT3, LAYER_4, LAYER_5, LAYER_6, LAYER_7, LAYER_8, KC_TRNS, KC_AP_LED_TOG, KC_VOLD, KC_VOLU, KC_MUTE,
                          KC_TRNS, KC_TRNS, KC_UP, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_BRID, KC_BRIU, KC_AP_LED_SPEED, KC_AP_LED_NEXT_INTENSITY, KC_MSTP,
                          KC_TRNS, KC_LEFT, KC_DOWN, KC_RIGHT, KC_TRNS, KC_TRNS, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT, KC_PGUP, KC_PGDN, KC_MPLY,
                          KC_TRNS, KC_AP2_BT4, KC_AP2_BT_UNPAIR, KC_TRNS, KC_TRNS, LCAG(KC_L), MEH(KC_N), MEH(KC_M), KC_AP_LED_PREV_PROFILE, KC_AP_LED_NEXT_PROFILE, KC_DEL, KC_TRNS,
@@ -212,9 +222,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                          KC_TRNS, KC_TRNS, KC_TRNS, MS_BTN1, CLEAR_LAYER, LAYER_DOWN, LAYER_UP, KC_TRNS),
 
     [FN6] = LAYOUT_60_ansi(KC_TRNS, KC_1, KC_2, KC_3, KC_4, KC_5, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, MEH(KC_M),
-                         KC_TAB, KC_TRNS, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_U, KC_I, KC_O, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+                         KC_TAB, KC_G, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_U, KC_I, KC_O, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
                          KC_LSFT, KC_LSFT, KC_A, KC_S, KC_D, KC_F, KC_G, KC_J, KC_K, KC_L, KC_TRNS, KC_TRNS, KC_TRNS,
-                         KC_TRNS, KC_TRNS, KC_Z, KC_X, KC_C, KC_V, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+                         KC_TRNS, KC_LCTL, KC_Z, KC_X, KC_C, KC_V, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
                          KC_LCTL, KC_TRNS, KC_LALT, KC_SPACE, CLEAR_LAYER, LAYER_DOWN, LAYER_UP, KC_TRNS),
 
     [FN7] = LAYOUT_60_ansi(KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
