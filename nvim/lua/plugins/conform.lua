@@ -2,7 +2,7 @@ local M = {
   "stevearc/conform.nvim",
   opts = function()
     local plugin = require("lazy.core.config").plugins["conform.nvim"]
-    if plugin.config ~= M.setup then
+    if plugin.config ~= require("conform").setup then
       LazyVim.error({
         "Don't set `plugin.config` for `conform.nvim`.\n",
         "This will break **LazyVim** formatting.\n",
@@ -11,6 +11,7 @@ local M = {
     end
     ---@type conform.setupOpts
     local opts = {
+      log_level = vim.log.levels.DEBUG,
       default_format_opts = {
         timeout_ms = 3000,
         async = false, -- not recommended to change
@@ -38,10 +39,10 @@ local M = {
       -- You can also define any custom formatters here.
       ---@type table<string, conform.FormatterConfigOverride|fun(bufnr: integer): nil|conform.FormatterConfigOverride>
       formatters = {
-        ["clang-format"] = {
-          command = "clang-format",
-          args = { "--style=file", "$FILENAME" },
-        },
+        -- ["clang-format"] = {
+        --   command = "clang-format",
+        --   args = { "--style=file", "$FILENAME" },
+        -- },
         my_formatter = {},
       },
     }
