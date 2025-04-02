@@ -7,6 +7,7 @@ alias sct="systemctl-tui"
 alias vim="nvim"
 alias ai="aichat"
 alias cat="batcat --paging=never"
+alias cs='() { curl -s https://raw.githubusercontent.com/funnyzak/cli-cheatsheets/refs/heads/main/cheatsheet.sh | bash -s -- "$@" }'
 
 history-count() {
     omz_history -f | awk '{print $4}' | sort -r | uniq -c | sort -n
