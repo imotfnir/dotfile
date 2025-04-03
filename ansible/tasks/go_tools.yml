@@ -9,3 +9,7 @@
 - name: Install wireguard-ui
   ansible.builtin.command:
     cmd: go install github.com/ngoduykhanh/wireguard-ui@latest
+
+- name: Install typioca
+  ansible.builtin.command:
+    cmd: go install github.com/bloznelis/typioca@latest
