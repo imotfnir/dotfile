@@ -13,6 +13,8 @@ CONFIG_MAP=(
     ["$SOURCE_DIR/gitconfig"]="$HOME/.my-git.conf"
     ["$SOURCE_DIR/ranger"]="$HOME/.config/ranger"
     ["$SOURCE_DIR/nvim"]="$HOME/.config/nvim"
+    ["$SOURCE_DIR/typioca.conf"]="$HOME/.config/typioca/typioca.conf"
+    ["$SOURCE_DIR/typioca-wordlist"]="$HOME/.config/typioca/typioca-wordlist"
     # ["$SOURCE_DIR/some_system_conf"]="/etc/some_conf"      # Example requiring sudo
 )
 
