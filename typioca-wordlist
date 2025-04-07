@@ -1,12 +1,46 @@
 ipmitool
-git
+git status
+git commit
+git branch
+git clone
+git log
 tldr
 docker
+docker container ls -a
+docker compose
+docker compose up -d
+docker image ls -a
+docker images
 ranger
 cat
-dpkg
+less
+apt install
+apt update
+apt upgrade
+dpkg -i
 echo
-netstat
-systemctl
+netstat -tluan
+systemctl status
+systemctl stop
+systemctl start
+systemctl restart
+systemctl enable
+systemctl disable
 clang-format
-demsg
+dmesg
+sudo dmesg | tail
+ls
+cd
+vim
+nvim
+sudo
+lsblk
+exec
+make
+ranger
+man
+timg
+which
+where
+poweroff
+rm
