@@ -9,8 +9,9 @@ services:
       - TZ=TW
     volumes:
       - /var/lib/jellyfin:/config
-      - /home/imotfnir/rigel:/data/
-    devices:  
+      - /home/imotfnir/rigel:/data/ssd
+      - /home/imotfnir/nas:/data/hdd
+    devices:
       - /dev/dri:/dev/dri
     ports:
       - 8096:8096 # http
