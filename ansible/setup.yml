@@ -70,6 +70,7 @@
           - np
           - bat
           - git-delta
+          - duf
         state: present
       become: yes
       ignore_errors: yes
