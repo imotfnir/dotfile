@@ -88,7 +88,7 @@ def generate_html():
     </div>
     <div>
         <label for="per-page">Per Page:</label>
-        <input type="number" id="per-page" value="1" min="1">
+        <input type="number" id="per-page" value="50" min="1">
     </div>
     <div>
         <button id="prev-btn" class="nav-button">&larr; Prev</button>
