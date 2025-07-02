@@ -8,6 +8,7 @@
         update_cache: yes
       become: yes
       ignore_errors: yes
+      tags: apt
 
     - name: Install git
       ansible.builtin.package:
@@ -16,6 +17,7 @@
       become: yes
       register: git_install_result
       ignore_errors: yes
+      tags: git
 
     - name: Install go
       ansible.builtin.package:
@@ -24,6 +26,7 @@
       become: yes
       register: go_install_result
       ignore_errors: yes
+      tags: go
 
     - name: Install snap
       ansible.builtin.package:
@@ -34,6 +37,7 @@
       become: yes
       register: snap_install_result
       ignore_errors: yes
+      tags: snap
 
     - name: Install rust
       ansible.builtin.package:
@@ -43,6 +47,7 @@
       become: yes
       register: rust_install_result
       ignore_errors: yes
+      tags: rust
 
     - name: Install basic tools
       ansible.builtin.package:
@@ -50,6 +55,7 @@
           - eza
           - tmux
           - vim
+          - neovim
           - htop
           - btop
           - ranger
@@ -64,16 +70,18 @@
           - autojump
           - zoxide
           - timg
-          - 7z
-          - tracert
+          - p7zip-full
+          - p7zip-rar
+          - traceroute
           - xorg
-          - np
+          - nmap
           - bat
           - git-delta
           - duf
         state: present
       become: yes
       ignore_errors: yes
+      tags: tools
 
     - name: Install LSP tools
       ansible.builtin.package:
@@ -92,6 +100,7 @@
       become: no
       ignore_errors: yes
       register: conda_install_result
+      tags: conda
 
     - name: Install pip, python
       ansible.builtin.package:
@@ -102,6 +111,7 @@
       ignore_errors: yes
       register: python_install_result
       when: conda_install_result.failed
+      tags: python
 
     - name: Install go-tools
       ansible.builtin.import_tasks: tasks/go_tools.yml
