@@ -1,0 +1,17 @@
+---
+services:
+  h-ui:
+    image: jonssonyan/h-ui
+    container_name: h-ui
+    restart: always
+    network_mode: "host"
+    cap_add:
+      - NET_ADMIN
+    environment:
+      - TZ=Asia/Taipei
+    volumes:
+      - /h-ui/bin:/h-ui/bin
+      - /h-ui/data:/h-ui/data
+      - /h-ui/export:/h-ui/export
+      - /h-ui/logs:/h-ui/logs
+    command: "./h-ui -p 5001"
