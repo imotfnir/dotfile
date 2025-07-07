@@ -1,7 +1,7 @@
 ---
 services:
   h-ui:
-    image: jonssonyan/h-ui
+    image: jonssonyan/h-ui:latest
     container_name: h-ui
     restart: always
     network_mode: "host"
