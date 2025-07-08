@@ -9,7 +9,7 @@ services:
       - TZ=TW
     volumes:
       - /var/lib/jellyfin:/config
-      - ${STORAGE_DIR}/qbittorrent:/data/hdd
+      - ${STORAGE_DIR}/qbittorrent_share:/data/hdd
     devices:
       - /dev/dri:/dev/dri
     ports:
