@@ -2,3 +2,4 @@
 .vscode
 nvim/lazyvim.json
 nvim/lazy-lock.json
+*.commit_message
