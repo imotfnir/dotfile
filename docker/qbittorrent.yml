@@ -46,8 +46,8 @@ services:
       - AUTO_UPDATE=true #optional
       - RUN_OPTS= #optional
     volumes:
-      - /var/lib/jackett:/config
-      - /srv/nas0/torrent:/downloads
+      - ${DATA_DIR}/jackett:/config
+      - ${STORAGE_DIR}/torrent:/downloads
     ports:
       - 9117:9117
     restart: unless-stopped

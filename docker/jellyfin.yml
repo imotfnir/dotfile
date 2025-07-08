@@ -4,13 +4,12 @@ services:
     container_name: jellyfin
     environment:
       - PUID=1000
-      - PGID=1001
+      - PGID=1003
       - UMASK=002
       - TZ=TW
     volumes:
       - /var/lib/jellyfin:/config
-      - /home/imotfnir/rigel:/data/ssd
-      - /home/imotfnir/nas:/data/hdd
+      - ${STORAGE_DIR}/qbittorrent:/data/hdd
     devices:
       - /dev/dri:/dev/dri
     ports:
