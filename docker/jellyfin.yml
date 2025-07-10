@@ -9,6 +9,8 @@ services:
       - TZ=TW
     volumes:
       - /var/lib/jellyfin:/config
+      - /usr/share/fonts/:/usr/share/fonts:ro
+      - ${HOME_DIR}/.fonts:/.fonts:ro
       - ${STORAGE_DIR}/qbittorrent_share:/data/hdd
     devices:
       - /dev/dri:/dev/dri
