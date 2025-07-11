@@ -22,3 +22,10 @@ apt install golang-go
 go install github.com/jesseduffield/lazydocker@latest
 go install github.com/jesseduffield/lazygit@latest
 ```
+
+# zsh config
+```bash
+vim ~/.zshrc
+source $ZSH/plugins.zsh
+
+```
