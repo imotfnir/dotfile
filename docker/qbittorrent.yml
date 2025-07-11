@@ -6,6 +6,7 @@ services:
       - PUID=1000
       - PGID=1003
       - TZ=Asia/Taipei
+      - UMASK=002
       - WEBUI_PORT=8080
       - TORRENTING_PORT=6881
     volumes:
@@ -24,6 +25,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1003
+      - UMASK=002
       - TZ=Asia/Taipei
       - WEBUI_PORT=8081
       - TORRENTING_PORT=6882
