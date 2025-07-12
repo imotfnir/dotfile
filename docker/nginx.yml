@@ -4,6 +4,7 @@ services:
     container_name: nginx
     network_mode: "host"
     volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf:ro
-      - ./acme:/etc/letsencrypt:ro
+      - ./nginx:/etc/nginx:ro
+      - ${HOME_DIR}/.acme.sh:/etc/letsencrypt:ro
+      - ${DATA_DIR}/nginx:/usr/share/nginx
     restart: unless-stopped
