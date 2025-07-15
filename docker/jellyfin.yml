@@ -2,11 +2,8 @@ services:
   jellyfin:
     image: lscr.io/linuxserver/jellyfin:latest
     container_name: jellyfin
-    environment:
-      - PUID=1000
-      - PGID=1003
-      - UMASK=002
-      - TZ=TW
+    env_file:
+      - .env
     volumes:
       - /var/lib/jellyfin:/config
       - /usr/share/fonts/:/usr/share/fonts:ro
@@ -21,3 +18,51 @@ services:
       - 1900:1900/udp #optional
     restart: unless-stopped
 
+  jellyseerr:
+    image: fallenbagel/jellyseerr:latest
+    container_name: jellyseerr
+    environment:
+      - LOG_LEVEL=debug
+      - TZ=Asia/Taipei
+    ports:
+      - 5055:5055
+    volumes:
+      - ${DATA_DIR}/jellyseerr:/app/config
+    restart: unless-stopped
+
+  radarr:
+    image: lscr.io/linuxserver/radarr:latest
+    container_name: radarr
+    env_file:
+      - .env
+    volumes:
+      - ${DATA_DIR}/radarr:/config
+      - ${STORAGE_DIR}/qbittorrent_share/movies:/movies #optional
+      - ${STORAGE_DIR}/qbittorrent_share/incomplete:/downloads #optional
+    ports:
+      - 7878:7878
+    restart: unless-stopped
+
+  sonarr:
+    image: lscr.io/linuxserver/sonarr:latest
+    container_name: sonarr
+    env_file:
+      - .env
+    volumes:
+      - ${DATA_DIR}/sonarr:/config
+      - ${STORAGE_DIR}/qbittorrent_share/tv:/tv #optional
+      - ${STORAGE_DIR}/qbittorrent_share/incomplete:/downloads #optional
+    ports:
+      - 8989:8989
+    restart: unless-stopped
+
+  prowlarr:
+    image: lscr.io/linuxserver/prowlarr:latest
+    container_name: prowlarr
+    env_file:
+      - .env
+    volumes:
+      - ${DATA_DIR}/prowlarr:/config
+    ports:
+      - 9696:9696
+    restart: unless-stopped
