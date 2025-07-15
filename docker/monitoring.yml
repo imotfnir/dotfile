@@ -4,11 +4,13 @@ services:
     container_name: "dashy"
     restart: always
     volumes:
+      - ./dashy/conf.yml:/app/user-data/conf.yml
       - ${DATA_DIR}/dashy:/app/user-data
     ports:
       - 17054:8080
     environment:
       - NODE_ENV=production
+
   beszel:
     image: "henrygd/beszel:latest"
     container_name: "beszel"
@@ -17,6 +19,7 @@ services:
       - "8090:8090"
     volumes:
       - ${DATA_DIR}/beszel_data:/beszel_data
+
   portainer:
     image: "portainer/portainer-ce:latest"
     container_name: "portainer"
@@ -28,6 +31,7 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ${DATA_DIR}/portainer:/data
+
   watchtower:
     image: "containrrr/watchtower:latest"
     container_name: "watchtower"

@@ -1,0 +1,200 @@
+appConfig:
+  theme: nord
+  language: zh-TW
+  layout: auto
+  iconSize: medium
+  customColors:
+    default:
+      primary: '#5cabca'
+      background: '#0b1021'
+      background-darker: '#05070e'
+    cyberpunk:
+      primary: '#5cabca'
+      background: '#0b1021'
+      background-darker: '#05070e'
+pageInfo:
+  title: Homelab
+  navLinks: []
+sections:
+  - name: dell
+    displayData:
+      sortBy: most-used
+      rows: 3
+      cols: 2
+      collapsed: false
+      hideForGuests: false
+    items:
+      - title: portainer
+        icon: si-portainer
+        url: http://192.168.0.6:9000/
+        target: newtab
+        id: 0_417_portainer
+      - title: beszel
+        icon: hl-beszel
+        url: http://192.168.0.6:8090/
+        target: newtab
+        id: 1_417_beszel
+      - title: openvpn
+        icon: hl-openvpn
+        url: https://192.168.0.6:943/
+        target: newtab
+        id: 2_417_openvpn
+      - title: filebrowser
+        icon: hl-filebrowser
+        url: http://192.168.0.6:8095/
+        target: newtab
+        id: 3_417_fs
+      - title: open-webui
+        icon: hl-open-webui
+        url: http://192.168.0.6:3000/
+        target: newtab
+        id: 4_417_openwebui
+      - title: ollama
+        icon: hl-ollama
+        url: http://192.168.0.6:11434/
+        target: clipboard
+        id: 5_417_ollama
+      - title: calibre-web
+        icon: hl-calibre
+        url: http://192.168.0.6:8083/
+        target: newtab
+        id: 6_417_calibreweb
+      - title: qBittorrent
+        icon: hl-qbittorrent
+        url: http://192.168.0.6:8080/
+        target: newtab
+        id: 7_417_qbittorrent
+      - title: jellyfin
+        icon: hl-jellyfin
+        url: http://192.168.0.6:8096/
+        target: newtab
+        id: 8_417_jellyfin
+      - title: openspeedtest
+        icon: si-speedtest
+        url: http://192.168.0.6:3000/
+        target: newtab
+        id: 9_417_openspeedtest
+  - name: orange pi
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    items:
+      - title: wireguard-ui
+        description: run by deamon
+        icon: hl-wireguard
+        url: http://192.168.0.7:5000/
+        target: newtab
+        id: 0_885_wireguardui
+      - title: OpenSpeedTest
+        icon: si-speedtest
+        url: http://192.168.0.7:3000/
+        id: 1_885_openspeedtest
+  - name: n100
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 2
+      collapsed: false
+      hideForGuests: false
+    items:
+      - title: portainer
+        icon: si-portainer
+        url: http://192.168.0.253:9000/
+        target: newtab
+        id: 0_255_portainer
+      - title: beszel
+        icon: hl-beszel
+        url: http://192.168.0.253:8090/
+        target: newtab
+        id: 1_255_beszel
+      - title: openspeedtest
+        icon: si-speedtest
+        url: http://192.168.0.253:3000/
+        target: newtab
+        id: 2_255_openspeedtest
+      - title: qBittorrent
+        icon: hl-qbittorrent
+        url: http://192.168.0.253:8080/
+        target: newtab
+        id: 3_255_qbittorrent
+      - title: cockpit
+        icon: hl-cockpit
+        description: run by deamon
+        url: https://192.168.0.253:9090/
+        id: 4_255_cockpit
+      - title: dify
+        icon: hl-dify
+        url: http://192.168.0.253/apps
+        id: 5_255_dify
+      - title: Jellyfin
+        icon: hl-jellyfin
+        url: http://192.168.0.253:8096/
+        id: 6_255_jellyfin
+      - title: H-UI
+        description: Hysteria2
+        icon: https://v2.hysteria.network/assets/logo.svg
+        url: https://192.168.0.253:5001/
+        target: newtab
+        id: 7_255_hui
+      - title: qBittorrent share
+        icon: hl-qbittorrent
+        url: http://192.168.0.253:8081/
+        target: newtab
+        id: 8_255_qbittorrentshare
+      - title: jackett
+        icon: hl-jackett
+        url: http://192.168.0.253:9117/
+        target: newtab
+        id: 9_255_jackett
+      - title: jellyseerr
+        icon: favicon
+        url: http://192.168.0.253:5055/
+        target: newtab
+        id: 10_255_jellyseerr
+      - title: radarr
+        icon: favicon
+        url: http://192.168.0.253:7878/
+        target: newtab
+        id: 11_255_radarr
+      - title: sonarr
+        icon: favicon
+        url: http://192.168.0.253:8989/
+        target: newtab
+        id: 12_255_sonarr
+      - title: prowlarr
+        icon: hl-prowlarr
+        url: http://192.168.0.253:9696/
+        target: newtab
+        id: 13_255_prowlarr
+      - title: wireguardui
+        icon: hl-wireguard
+        url: http://192.168.0.253:5000/
+        target: newtab
+        id: 13_255_wireguardui
+  - name: vps
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    items:
+      - title: openspeedtest
+        icon: si-speedtest
+        url: http://vps.imotfnir.qzz.io:3000/
+        target: newtab
+        id: 0_345_openspeedtest
+      - title: H-UI
+        description: Hysteria2
+        icon: https://v2.hysteria.network/assets/logo.svg
+        url: https://vps.imotfnir.qzz.io:5001/
+        target: newtab
+        id: 1_345_hui
+      - title: wireguard-ui
+        icon: hl-wireguard
+        url: http://vps.imotfnir.qzz.io:5000/
+        target: newtab
+        id: 2_345_wireguardui
