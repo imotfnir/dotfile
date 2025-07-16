@@ -10,6 +10,8 @@ services:
       - 17054:8080
     environment:
       - NODE_ENV=production
+      - HOST_IP="192.168.0.253"
+      - HOSTNAME="n100.local"
 
   beszel:
     image: "henrygd/beszel:latest"
