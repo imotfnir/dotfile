@@ -165,6 +165,11 @@ sections:
         url: http://n100.local:5000/
         target: newtab
         id: 14_255_wireguardui
+      - title: vscode
+        icon: hl-vscode
+        url: https://n100.local:8443/
+        target: newtab
+        id: 15_255_vscode
   - name: dell
     displayData:
       sortBy: most-used
