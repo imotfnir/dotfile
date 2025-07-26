@@ -83,6 +83,12 @@ sections:
         options:
           provider: ipapi.co
         id: 0_1004_publicip
+    items:
+      - title: openwrt
+        icon: hl-openwrt
+        url: http://192.168.0.250/
+        target: newtab
+        id: 0_1004_openwrt
   - name: n100
     displayData:
       sortBy: default
