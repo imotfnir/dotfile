@@ -89,6 +89,11 @@ sections:
         url: http://192.168.0.250/
         target: newtab
         id: 0_1004_openwrt
+      - title: hitron
+        icon: hl-router
+        url: http://192.168.0.1/
+        target: newtab
+        id: 1_1004_hitron
   - name: n100
     displayData:
       sortBy: default
@@ -176,6 +181,11 @@ sections:
         url: https://n100.local:8443/
         target: newtab
         id: 15_255_vscode
+      - title: home-assistant
+        icon: si-homeassistant
+        url: http://n100.local:8123/
+        target: newtab
+        id: 16_255_homeassistant
   - name: vps
     displayData:
       sortBy: default
