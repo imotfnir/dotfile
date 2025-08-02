@@ -67,14 +67,14 @@ sections:
       hideForGuests: false
     items:
       - title: wireguard-ui
-        description: run by deamon
+        description: ''
         icon: hl-wireguard
-        url: http://192.168.0.7:5000/
+        url: http://192.168.0.10:51821/
         target: newtab
         id: 0_885_wireguardui
       - title: OpenSpeedTest
         icon: si-speedtest
-        url: http://192.168.0.7:3000/
+        url: http://192.168.0.10:3000/
         id: 1_885_openspeedtest
   - name: ip-address
     icon: si-1dot1dot1dot1
@@ -173,7 +173,7 @@ sections:
         id: 13_255_prowlarr
       - title: wireguardui
         icon: hl-wireguard
-        url: http://n100.local:5000/
+        url: http://n100.local:51821/
         target: newtab
         id: 14_255_wireguardui
       - title: vscode
