@@ -1,0 +1,14 @@
+services:
+  tinyauth:
+    container_name: tinyauth
+    image: ghcr.io/steveiliop56/tinyauth:latest
+    environment:
+      - SECRET=PkPvqXR7htef11riIyr7s1etckVhL9ST
+      - APP_URL=https://www.741400.xyz
+      - USERS=imotfnir:$$2a$$10$$Y1Y1Yj1A/f6OZdGuyzzRvONBEs6qBUsPVzT8jDQblKkfNWXBEbFqi:JM2JIQBQQOET6PEJSVYAC2SSWCXOMSI3 # user:password
+    ports:
+      - "10001:3000"
+    labels:
+      traefik.enable: true
+      traefik.http.routers.tinyauth.rule: Host(`www.741400.xyz`)
+      traefik.http.middlewares.tinyauth.forwardauth.address: http://tinyauth:3000/api/auth/traefik
