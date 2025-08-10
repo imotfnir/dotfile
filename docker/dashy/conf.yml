@@ -124,7 +124,7 @@ sections:
         id: 3_255_qbittorrent
       - title: cockpit
         icon: hl-cockpit
-        description: run by deamon
+        description: run by daemon
         url: https://n100.local:9090/
         id: 4_255_cockpit
       - title: dify
@@ -196,17 +196,17 @@ sections:
     items:
       - title: openspeedtest
         icon: si-speedtest
-        url: http://vps.imotfnir.qzz.io:3000/
+        url: http://vps.741400.xyz:3000/
         target: newtab
         id: 0_345_openspeedtest
       - title: H-UI
         description: Hysteria2
         icon: https://v2.hysteria.network/assets/logo.svg
-        url: https://vps.imotfnir.qzz.io:5001/
+        url: https://vps.741400.xyz:5001/
         target: newtab
         id: 1_345_hui
       - title: wireguard-ui
         icon: hl-wireguard
-        url: http://vps.imotfnir.qzz.io:5000/
+        url: http://vps.741400.xyz:51821/
         target: newtab
         id: 2_345_wireguardui
