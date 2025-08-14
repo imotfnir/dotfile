@@ -6,7 +6,7 @@ git clone https://github.com/OpenAnnePro/AnnePro2-Tools
 ```
 # Copy keymaps files
 ```bash
-ln -s $(pwd)/annepro2_keymap.c ${QMK_HOME}/keyboards/annepro2/keymaps/rigel/keymaps.c
+ln -s $(pwd)/annepro2_keymap.c ${QMK_HOME}/keyboards/annepro2/keymaps/rigel/keymap.c
 ln -s $(pwd)/annepro2_config.h ${QMK_HOME}/keyboards/annepro2/c18/config.h
 ln -s $(pwd)/annepro2_rules.mk ${QMK_HOME}/keyboards/annepro2/c18/rules.mk
 ```
