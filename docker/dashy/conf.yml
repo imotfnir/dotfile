@@ -186,6 +186,11 @@ sections:
         url: http://n100.local:8123/
         target: newtab
         id: 16_255_homeassistant
+      - title: dockge
+        icon: hl-dockge
+        url: http://n100.local:9001/
+        target: newtab
+        id: 17_255_dockge
   - name: vps
     displayData:
       sortBy: default
@@ -210,3 +215,22 @@ sections:
         url: http://vps.741400.xyz:51821/
         target: newtab
         id: 2_345_wireguardui
+  - name: pve
+    icon: si-proxmox
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    items:
+      - title: pve
+        icon: si-proxmox
+        url: https://pve.local:8006/
+        target: newtab
+        id: 0_331_pve
+      - title: truenas
+        icon: hl-truenas
+        url: http://192.168.0.241/
+        target: newtab
+        id: 1_331_truenas
