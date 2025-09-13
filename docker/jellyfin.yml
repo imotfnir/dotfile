@@ -8,7 +8,7 @@ services:
       - /var/lib/jellyfin:/config
       - /usr/share/fonts/:/usr/share/fonts:ro
       - ${HOME_DIR}/.fonts:/.fonts:ro
-      - ${STORAGE_DIR}/qbittorrent_share:/data/hdd
+      - ${STORAGE_DIR}/:/data/hdd
     devices:
       - /dev/dri:/dev/dri
     ports:
@@ -37,8 +37,8 @@ services:
       - .env
     volumes:
       - ${DATA_DIR}/radarr:/config
-      - ${STORAGE_DIR}/qbittorrent_share/movies:/movies #optional
-      - ${STORAGE_DIR}/qbittorrent_share/incomplete:/downloads #optional
+      - ${STORAGE_DIR}/movies:/movies #optional
+      - ${STORAGE_DIR}/incomplete:/downloads #optional
     ports:
       - 7878:7878
     restart: unless-stopped
@@ -50,8 +50,8 @@ services:
       - .env
     volumes:
       - ${DATA_DIR}/sonarr:/config
-      - ${STORAGE_DIR}/qbittorrent_share/tv:/tv #optional
-      - ${STORAGE_DIR}/qbittorrent_share/incomplete:/downloads #optional
+      - ${STORAGE_DIR}/tv:/tv #optional
+      - ${STORAGE_DIR}/incomplete:/downloads #optional
     ports:
       - 8989:8989
     restart: unless-stopped

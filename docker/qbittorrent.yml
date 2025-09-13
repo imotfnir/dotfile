@@ -12,7 +12,6 @@ services:
     volumes:
       - /var/lib/qbittorrent/appdata:/config
       - ${STORAGE_DIR}/qbittorrent:/downloads #optional
-      - ${STORAGE_DIR}/qbittorrent_share:/share #optional
     ports:
       - 8080:8080
       - 6881:6881
@@ -31,7 +30,7 @@ services:
       - TORRENTING_PORT=6882
     volumes:
       - /var/lib/qbittorrent_share/appdata:/config
-      - ${STORAGE_DIR}/qbittorrent_share:/downloads #optional
+      - ${STORAGE_DIR}/:/downloads #optional
     ports:
       - 8081:8081
       - 6882:6882
