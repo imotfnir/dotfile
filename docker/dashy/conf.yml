@@ -234,3 +234,13 @@ sections:
         url: http://192.168.0.241/
         target: newtab
         id: 1_331_truenas
+      - title: pve-cockpit
+        icon: hl-cockpit
+        url: https://pve.local:9090/
+        target: newtab
+        id: 2_331_pvecockpit
+      - title: netdata
+        icon: hl-netdata
+        url: http://pve.local:19999/
+        target: newtab
+        id: 3_331_netdata
