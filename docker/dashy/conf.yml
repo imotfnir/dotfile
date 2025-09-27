@@ -244,3 +244,17 @@ sections:
         url: http://pve.local:19999/
         target: newtab
         id: 3_331_netdata
+  - name: debian
+    icon: si-debian
+    displayData:
+      sortBy: default
+      rows: 1
+      cols: 1
+      collapsed: false
+      hideForGuests: false
+    items:
+      - title: openspeedtest
+        icon: si-speedtest
+        url: http://debian.local:3000/
+        target: newtab
+        id: 0_611_openspeedtest
