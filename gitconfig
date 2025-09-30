@@ -11,7 +11,7 @@
         dt = diff-tree -r --no-commit-id --name-status --text --diff-filter=ACDMRT
         unstage = reset HEAD --
 [credential]
-        helper = cache --timeout 86400
+        helper = cache --timeout 604800
 [diff "bin"]
         textconv = xxd
         cachetextconv = true
