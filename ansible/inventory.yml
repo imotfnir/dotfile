@@ -3,16 +3,25 @@ all:
     homelab:
       hosts:
         orangepi:
-          ansible_host: 192.168.0.7
+          ansible_host: orangepione.local
           ansible_user: imotfnir
-          ansible_ssh_private_key_file: ~/.ssh/orangepi2
+          ansible_ssh_private_key_file: ~/.ssh/orangepione
       vars:
         ansible_become_pass: "{{ vault_ansible_become_pass }}"
+
+    debian:
+      hosts:
+        debian:
+          ansible_host: debian.local
+          ansible_user: imotfnir
+          ansible_ssh_private_key_file: ~/.ssh/debian
+      vars:
+        ansible_become: true
 
     cloud:
       hosts:
         vps:
-          ansible_host: 35.212.159.24
+          ansible_host: vps.741400.xyz
           ansible_user: imotfnir
           ansible_ssh_private_key_file: ~/.ssh/google_vps
       vars:
