@@ -22,7 +22,6 @@ plugins=(
     fzf-tab
     eza
     zoxide
-    thefuck
 )
 
 precmd () { echo -n "\x1b]1337;CurrentDir=$(pwd)\x07" }
