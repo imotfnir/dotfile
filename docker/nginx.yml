@@ -8,3 +8,23 @@ services:
       - ${HOME_DIR}/.acme.sh:/etc/letsencrypt:ro
       - ${DATA_DIR}/nginx:/usr/share/nginx
     restart: unless-stopped
+
+  goaccess:
+    image: allinurl/goaccess:latest
+    container_name: goaccess
+    volumes:
+      - ${DATA_DIR}/nginx/logs/:/var/log/nginx/:ro
+      - ${DATA_DIR}/goaccess:/data
+    environment:
+      - LANG=en_US.UTF-8
+    ports:
+      - 7891:7890
+    restart: unless-stopped
+    command:
+      - "/var/log/nginx/access.log"
+      - "-a"
+      - "-o report.html"
+      - "--log-format=COMBINED"
+      - "--real-time-html"
+      - "--persist"
+      - "--restore"
