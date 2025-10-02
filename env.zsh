@@ -7,3 +7,5 @@ export PATH="/snap/bin:$PATH"
 export FZF_CTRL_T_OPTS="--preview 'batcat --color=always --line-range :500 {}'"
 export FZF_ALT_C_OPTS="--preview 'eza -T --color=always {} | head -200'"
 export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git/*' --glob '!.cache/*' --glob '!.cargo/*' --glob '!.config/*' --glob '!node_modules/*' --glob '!vendor/*'"
+export TZ='Asia/Taipei'
+
