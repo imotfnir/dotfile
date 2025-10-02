@@ -34,11 +34,4 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - ${DATA_DIR}/portainer:/data
 
-  watchtower:
-    image: "containrrr/watchtower:latest"
-    container_name: "watchtower"
-    restart: always
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-    command: --interval 3600 --debug
 
