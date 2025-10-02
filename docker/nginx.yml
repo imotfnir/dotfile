@@ -13,18 +13,18 @@ services:
     image: allinurl/goaccess:latest
     container_name: goaccess
     volumes:
-      - ${DOCKER_DATA_DIR}/nginx/logs/:/var/log/nginx/:ro
+      - ${NGINX_LOGS_DIR}:/var/log/nginx/:ro
       - ${DOCKER_DATA_DIR}/goaccess:/data
     environment:
       - LANG=en_US.UTF-8
-    ports:
-      - 7891:7890
+    network_mode: "host"
     restart: unless-stopped
     command:
       - "/var/log/nginx/access.log"
       - "-a"
-      - "-o report.html"
+      - "--output=/data/access_report.html"
       - "--log-format=COMBINED"
       - "--real-time-html"
+      - "--port=7891"
       - "--persist"
       - "--restore"
