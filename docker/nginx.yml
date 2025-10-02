@@ -14,7 +14,7 @@ services:
     container_name: goaccess
     volumes:
       - ${NGINX_LOGS_DIR}:/var/log/nginx/:ro
-      - ${DOCKER_DATA_DIR}/goaccess:/data
+      - ${DOCKER_DATA_DIR}/nginx:/data
     environment:
       - LANG=en_US.UTF-8
     network_mode: "host"
@@ -22,7 +22,7 @@ services:
     command:
       - "/var/log/nginx/access.log"
       - "-a"
-      - "--output=/data/access_report.html"
+      - "--output=/data/html/access_report.html"
       - "--log-format=COMBINED"
       - "--real-time-html"
       - "--port=7891"
