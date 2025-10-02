@@ -9,7 +9,7 @@ services:
       - PGID=1000
       - TZ=Asia/Taipei
     volumes:
-      - ${DATA_DIR}/homeassistant/data:/config
+      - ${DOCKER_DATA_DIR}/homeassistant/data:/config
     ports:
       - 8123:8123   # optional
     restart: unless-stopped

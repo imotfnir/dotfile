@@ -6,15 +6,15 @@ services:
     volumes:
       - ./nginx:/etc/nginx:ro
       - ${HOME_DIR}/.acme.sh:/etc/letsencrypt:ro
-      - ${DATA_DIR}/nginx:/usr/share/nginx
+      - ${DOCKER_DATA_DIR}/nginx:/usr/share/nginx
     restart: unless-stopped
 
   goaccess:
     image: allinurl/goaccess:latest
     container_name: goaccess
     volumes:
-      - ${DATA_DIR}/nginx/logs/:/var/log/nginx/:ro
-      - ${DATA_DIR}/goaccess:/data
+      - ${DOCKER_DATA_DIR}/nginx/logs/:/var/log/nginx/:ro
+      - ${DOCKER_DATA_DIR}/goaccess:/data
     environment:
       - LANG=en_US.UTF-8
     ports:

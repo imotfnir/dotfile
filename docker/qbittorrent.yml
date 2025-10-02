@@ -41,7 +41,7 @@ services:
       - AUTO_UPDATE=true #optional
       - RUN_OPTS= #optional
     volumes:
-      - ${DATA_DIR}/jackett:/config
+      - ${DOCKER_DATA_DIR}/jackett:/config
       - ${STORAGE_DIR}/torrent:/downloads
     ports:
       - 9117:9117

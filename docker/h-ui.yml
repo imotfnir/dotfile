@@ -9,9 +9,9 @@ services:
     environment:
       - TZ=Asia/Taipei
     volumes:
-      - ${DATA_DIR}/h-ui/bin:/h-ui/bin
-      - ${DATA_DIR}/h-ui/data:/h-ui/data
-      - ${DATA_DIR}/h-ui/export:/h-ui/export
-      - ${DATA_DIR}/h-ui/logs:/h-ui/logs
+      - ${DOCKER_DATA_DIR}/h-ui/bin:/h-ui/bin
+      - ${DOCKER_DATA_DIR}/h-ui/data:/h-ui/data
+      - ${DOCKER_DATA_DIR}/h-ui/export:/h-ui/export
+      - ${DOCKER_DATA_DIR}/h-ui/logs:/h-ui/logs
       - ${HOME_DIR}/.acme.sh/741400.xyz_ecc:/h-ui/741400.xyz_ecc:ro
     command: "./h-ui -p 5001"

@@ -6,11 +6,11 @@ services:
     ports:
       - '10000:8080'
     volumes:
-      - ${DATA_DIR}/stirlingpdf/trainingData:/usr/share/tessdata # Required for extra OCR languages
-      - ${DATA_DIR}/stirlingpdf/extraConfigs:/configs
-      - ${DATA_DIR}/stirlingpdf/customFiles:/customFiles/
-      - ${DATA_DIR}/stirlingpdf/logs:/logs/
-      - ${DATA_DIR}/stirlingpdf/pipeline:/pipeline/
+      - ${DOCKER_DATA_DIR}/stirlingpdf/trainingData:/usr/share/tessdata # Required for extra OCR languages
+      - ${DOCKER_DATA_DIR}/stirlingpdf/extraConfigs:/configs
+      - ${DOCKER_DATA_DIR}/stirlingpdf/customFiles:/customFiles/
+      - ${DOCKER_DATA_DIR}/stirlingpdf/logs:/logs/
+      - ${DOCKER_DATA_DIR}/stirlingpdf/pipeline:/pipeline/
     environment:
       - DISABLE_ADDITIONAL_FEATURES=false
       - LANGS=en_GB

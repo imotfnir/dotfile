@@ -8,8 +8,8 @@ services:
       - TZ=Asia/Taipei
       # - REDIS_URL= #optional
     volumes:
-      - ${DATA_DIR}/paperless-ngx/config:/config
-      - ${DATA_DIR}/paperless-ngx/data:/data
+      - ${DOCKER_DATA_DIR}/paperless-ngx/config:/config
+      - ${DOCKER_DATA_DIR}/paperless-ngx/data:/data
     ports:
       - 8000:8000
     restart: unless-stopped
