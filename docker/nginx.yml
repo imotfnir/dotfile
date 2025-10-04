@@ -28,3 +28,4 @@ services:
       - "--port=7891"
       - "--persist"
       - "--restore"
+      - "--ws-url=n100.local/goaccess"
