@@ -1,5 +1,5 @@
 appConfig:
-  theme: nord
+  theme: glass
   language: zh-TW
   layout: auto
   iconSize: medium
@@ -191,6 +191,11 @@ sections:
         url: http://n100.local:9001/
         target: newtab
         id: 17_255_dockge
+      - title: goaccess
+        icon: hl-goaccess
+        url: http://n100.local/goaccess
+        target: newtab
+        id: 18_255_goaccess
   - name: vps
     displayData:
       sortBy: default
