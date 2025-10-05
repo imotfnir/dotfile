@@ -1,0 +1,18 @@
+services:
+  fail2ban:
+    image: lscr.io/linuxserver/fail2ban:latest
+    container_name: fail2ban
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    network_mode: host
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Taipei
+      - VERBOSITY=-vv #optional
+    volumes:
+      - ${DOCKER_DATA_DIR}/fail2ban/config:/config
+      - ${DOCKER_DATA_DIR}/fail2ban/log:/var/log:ro
+      - ${DOCKER_DATA_DIR}/nginx/logs:/remotelogs/nginx:ro #optional
+    restart: unless-stopped
