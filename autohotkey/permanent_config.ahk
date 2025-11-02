@@ -196,3 +196,25 @@ MButton:: Send "{Esc}"
 ; {::
 ; (::
 ; [:: SmartQuoteAdvanced()
+
+; Marco
+F13::
+{
+    local ClickDelay := 50
+    Static IsClicking := false
+    IsClicking := !IsClicking
+
+    if (IsClicking)
+    {
+        SetTimer(DoClick, ClickDelay)
+        DoClick()
+    }
+    else
+    {
+        SetTimer(DoClick, 0) ; Stop the timer
+    }
+}
+DoClick()
+{
+    Click
+}
