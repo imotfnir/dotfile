@@ -146,7 +146,7 @@ Numpad7:: Click
 
 ; Media viewer support
 ; Telegram Media viewer
-#HotIf MouseIsOver("ahk_class Qt51517QWindowIcon ahk_exe Telegram.exe", "Media viewer")
+#HotIf MouseIsOver("ahk_class Qt51518QWindowIcon ahk_exe Telegram.exe", "Media viewer")
 WheelUp:: Send "{Left}"
 WheelDown:: Send "{Right}"
 Up:: Send "{WheelUp}"
