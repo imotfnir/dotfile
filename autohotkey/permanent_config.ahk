@@ -172,7 +172,7 @@ WheelDown:: Send "{Right}"
 #HotIf
 
 ; Edge Browser
-#HotIf IsFullScreenInSomeWebsite("(YouTube)|(Gimy 劇迷)|(MX动漫)|(ANi Open)|(唐人街影院)|(Hanime1.me)|(Pornhub)|(Jable)|(Miss)|(Anime1)")
+#HotIf IsFullScreenInSomeWebsite("(YouTube)|(Gimy 劇迷)|(MX动漫)|(ANi Open)|(唐人街影院)|(Hanime1.me)|(Pornhub)|(Jable)|(Miss)|(Anime1)|(Twitch)")
 WheelUp:: Send "{Left}"
 WheelDown:: Send "{Right}"
 MButton:: Send "{Esc}"
