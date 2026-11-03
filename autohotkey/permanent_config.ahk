@@ -33,7 +33,7 @@ IsFullScreenInSomeWebsite(Website) {
     } catch Error as e {
         return false
     }
-    WinObjectExp := "ahk_class Chrome_WidgetWin_1 ahk_exe msedge.exe ahk_id" Win
+    WinObjectExp := "ahk_class Chrome_WidgetWin_1 ahk_id" Win
 
     ; Full screen check
     if (!RegExMatch(Control, "Intermediate D3D Window.*")) {
@@ -171,12 +171,12 @@ WheelDown:: Send "{Right}"
 !WheelDown:: Send "d"           ; previous frame
 #HotIf
 
-; Edge Browser
+; Edge and Vivaldi Browser
 #HotIf IsFullScreenInSomeWebsite("(YouTube)|(Gimy)|(MX动漫)|(ANi Open)|(唐人街影院)|(Hanime1.me)|(Pornhub)|(Jable)|(Miss)|(Anime1)|(Twitch)|(AEG)")
 WheelUp:: Send "{Left}"
 WheelDown:: Send "{Right}"
 MButton:: Send "{Esc}"
-#HotIf MouseIsOver("ahk_class Chrome_WidgetWin_1 ahk_exe msedge.exe")
+#HotIf MouseIsOver("ahk_class Chrome_WidgetWin_1 ahk_exe msedge.exe") or MouseIsOver("ahk_class Chrome_WidgetWin_1 ahk_exe vivaldi.exe")
 !WheelUp:: Send "!{Left}"
 !WheelDown:: Send "!{Right}"
 +WheelUp:: Send "^+{Tab}"
